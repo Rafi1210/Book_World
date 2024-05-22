@@ -1,0 +1,1219 @@
+{
+  "id":"10030"
+ ,"Identification":{
+    "Name":"Activity Dashboard"
+   ,"Alias":"ACTIVITY-DASHBOARD"
+   ,"Title":"Activity Dashboard"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Modal Dialog (103333292930980026574)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"ui-dialog--stretch"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Activity Reporting (103333568377923026776)"
+  }
+ ,"Regions":[
+    {
+      "id":"103333896728341029887"
+     ,"Identification":{
+        "Title":"Hourly Page Events"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"i-h320"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103333896899252029887"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Time Axis Type":"Enabled"
+         ,"Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":false
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Series":[
+          {
+            "id":"103333898903574029888"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"with nw as (\n    -- APEX_ACTIVITY_LOG uses dates; convert system time to local time zone.\n    select from_tz( cast( sysdate as timestamp ), to_char( systimestamp, \u0027TZR\u0027 ) ) at local as tm from dual\n),\nwindow as (\n    select\n         trunc(nw.tm - ((level-1)\/24),\u0027HH\u0027) start_tm,\n         trunc(nw.tm - ((level-2)\/24),\u0027HH\u0027) end_tm,\n         trunc(sysdate-((level-1)\/24),\u0027HH\u0027) log_start_tm,\n         trunc(sysdate-((level-2)\/24),\u0027HH\u0027) log_end_tm\n    from nw\n    connect by level \u003C= round( 24 * ( 1\/24\/60\/60 * nvl(:P10030_TIMEFRAME,1) ) )\n)\nselect w.start_tm log_time,\n       ( select count(*)\n           from apex_activity_log l\n          where l.flow_id = :app_id\n            and l.time_stamp between w.log_start_tm and w.log_end_tm ) as value\nfrom window w\norder by 1"
+             ,"Page Items to Submit":[
+                "P10030_TIMEFRAME"
+              ]
+            }
+           ,"Column Mapping":{
+              "Label":"LOG_TIME"
+             ,"Value":"VALUE"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":350
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"103333899585820029889"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+         ,{
+            "id":"103333900108226029889"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"DateTime - Short"
+             ,"Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":true
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"103333896979805029887"
+     ,"Identification":{
+        "Title":"Most Active Pages"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"i-h320"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103333897043739029887"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Horizontal"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":false
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Series":[
+          {
+            "id":"103333903949704029892"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"select x.step_id||\u0027. \u0027||(select page_name from apex_application_pages p where p.application_id = :app_id and page_id = x.step_id) label, \n        value\nfrom ( select step_id,\n              count(*) as value\n         from apex_activity_log\n        where flow_id = :app_id\n          and time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10030_TIMEFRAME )\n          and step_id is not null\n        group by step_id\n        order by 2 desc\n     ) x"
+             ,"Page Items to Submit":[
+                "P10030_TIMEFRAME"
+              ]
+            }
+           ,"Column Mapping":{
+              "Label":"LABEL"
+             ,"Value":"VALUE"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":10
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"103333904500805029892"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"103333905110268029893"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"103333897151593029887"
+     ,"Identification":{
+        "Title":"Top Users"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"i-h320"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103333897247653029887"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Horizontal"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":false
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Series":[
+          {
+            "id":"103333901412114029890"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"select nvl( userid_lc, apex_lang.message(\u0027APEX.FEATURE.TOP_USERS.USERNAME.NOT_IDENTIFIED\u0027) ) as label,\n       count(*) as value\nfrom apex_activity_log\nwhere flow_id = :app_id\nand time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10030_TIMEFRAME )\ngroup by nvl( userid_lc, apex_lang.message(\u0027APEX.FEATURE.TOP_USERS.USERNAME.NOT_IDENTIFIED\u0027) )\norder by 2 desc"
+             ,"Page Items to Submit":[
+                "P10030_TIMEFRAME"
+              ]
+            }
+           ,"Column Mapping":{
+              "Label":"LABEL"
+             ,"Value":"VALUE"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":10
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"103333902039106029890"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"103333902664335029891"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"103333897318191029887"
+     ,"Identification":{
+        "Title":"Recent Errors"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select sqlerrm    label,\n       time_stamp value\n  from apex_activity_log\n where flow_id    = :app_id\n   and time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10030_TIMEFRAME )\n   and sqlerrm    is not null\n order by 2 desc, 1"
+       ,"Page Items to Submit":[
+          "P10030_TIMEFRAME"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"i-h240"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":20
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (103333413154485026632)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--stretch"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+           ,"t-Report--inline"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"No Pagination (Show All Rows)"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"103333906367848029897"
+         ,"Identification":{
+            "Column Name":"LABEL"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Label"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":1
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103333906774318029897"
+         ,"Identification":{
+            "Column Name":"VALUE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Value"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"SINCE"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"103333897476732029887"
+     ,"Identification":{
+        "Title":"Latest Activity"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select userid_lc       as username,\n       max(time_stamp) as last_activity\n  from apex_activity_log\n where flow_id     = :app_id\n   and time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10030_TIMEFRAME )\n   and userid_lc  is not null\n group by userid_lc\n order by 2 desc"
+       ,"Page Items to Submit":[
+          "P10030_TIMEFRAME"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"i-h240"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":20
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (103333413154485026632)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--stretch"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+           ,"t-Report--inline"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"No Pagination (Show All Rows)"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"No activities found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"103333916133018030080"
+         ,"Identification":{
+            "Column Name":"USERNAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Username"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":1
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103333916503715030080"
+         ,"Identification":{
+            "Column Name":"LAST_ACTIVITY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Last Activity"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"SINCE"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"103333897599406029887"
+     ,"Identification":{
+        "Title":"Filters"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (103333311078147026585)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-ButtonRegion--slimPadding"
+         ,"t-ButtonRegion--noUI"
+         ,"t-Form--large"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103333897638408029887"
+     ,"Identification":{
+        "Name":"P10030_TIMEFRAME"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Timeframe"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Filters (103333897599406029887)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (103333445622185026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"TIMEFRAME (4 WEEKS) (103333932812091030255)"
+       ,"Display Extra Values":false
+       ,"Display Null Value":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Static Value"
+       ,"Static Value":"900"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103333931027074030254"
+     ,"Identification":{
+        "Button Name":"VIEW_ACTIVITY_BY_USER"
+       ,"Label":"View Details"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Hourly Page Events (103333896728341029887)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (103333447476905026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--noUI"
+        ]
+       ,"Icon":"fa-angle-right"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10031:\u0026APP_SESSION.::\u0026DEBUG.:RP,10031::"
+         ,"Page":"10031"
+         ,"Clear Cache":"RP,10031"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"103333931432761030254"
+     ,"Identification":{
+        "Button Name":"VIEW_ACTIVITY_DETAILS"
+       ,"Label":"View Details"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Most Active Pages (103333896979805029887)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (103333447476905026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--noUI"
+        ]
+       ,"Icon":"fa-angle-right"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10034:\u0026APP_SESSION.::\u0026DEBUG.:RP,10034::"
+         ,"Page":"10034"
+         ,"Clear Cache":"RP,10034"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"103333931825551030254"
+     ,"Identification":{
+        "Button Name":"VIEW_ACTIVITY_BY_USER"
+       ,"Label":"View Details"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Top Users (103333897151593029887)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (103333447476905026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--noUI"
+        ]
+       ,"Icon":"fa-angle-right"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10031:\u0026APP_SESSION.::\u0026DEBUG.:RP,10031::"
+         ,"Page":"10031"
+         ,"Clear Cache":"RP,10031"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"103333932275645030254"
+     ,"Identification":{
+        "Button Name":"VIEW_RECENT_ERRORS"
+       ,"Label":"View Details"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Recent Errors (103333897318191029887)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (103333447476905026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--noUI"
+        ]
+       ,"Icon":"fa-angle-right"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10032:\u0026APP_SESSION.::\u0026DEBUG.:RP,10032::"
+         ,"Page":"10032"
+         ,"Clear Cache":"RP,10032"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103333897782636029887"
+     ,"Identification":{
+        "Name":"Change Filters"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P10030_TIMEFRAME"
+        ]
+      }
+     ,"Actions":[
+        {
+          "id":"103333933806315030258"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Hourly Page Events (103333896728341029887)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Change Filters (103333897782636029887)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"103333934398710030259"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Top Users (103333897151593029887)"
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"Change Filters (103333897782636029887)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"103333934817232030259"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Most Active Pages (103333896979805029887)"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"Change Filters (103333897782636029887)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"103333935362814030260"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Recent Errors (103333897318191029887)"
+          }
+         ,"Execution":{
+            "Sequence":40
+           ,"Event":"Change Filters (103333897782636029887)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"103333935842432030260"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Latest Activity (103333897476732029887)"
+          }
+         ,"Execution":{
+            "Sequence":50
+           ,"Event":"Change Filters (103333897782636029887)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

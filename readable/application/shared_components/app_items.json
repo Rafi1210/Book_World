@@ -1,0 +1,30 @@
+[
+  {
+    "id":"111714869117778360576"
+   ,"Identification":{
+      "Name":"SHOPPING_CART_ICON"
+     ,"Scope":"Application"
+    }
+   ,"Security":{
+      "Session State Protection":"Restricted - May not be set from browser"
+     ,"Escape special characters":true
+    }
+   ,"Subscription":{
+      "Version Number":15530434549890
+    }
+  }
+ ,{
+    "id":"111715003908397644210"
+   ,"Identification":{
+      "Name":"SHOPPING_CART_ITEMS"
+     ,"Scope":"Application"
+    }
+   ,"Security":{
+      "Session State Protection":"Restricted - May not be set from browser"
+     ,"Escape special characters":true
+    }
+   ,"Subscription":{
+      "Version Number":15530434572474
+    }
+  }
+]

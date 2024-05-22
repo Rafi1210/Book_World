@@ -1,0 +1,256 @@
+{
+  "id":"42"
+ ,"Identification":{
+    "Name":"Highest Rated Books"
+   ,"Alias":"HIGHEST-RATED-BOOKS"
+   ,"Title":"Highest Rated Books"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"112016954148967501955"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (103333271254884026562)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (103333387368528026620)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (103333451874840026652)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"112016955034952501955"
+     ,"Identification":{
+        "Title":"Highest Rated Books"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"112016955465595501956"
+       ,"Chart":{
+          "Type":"Combination"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Layout":{
+          "Height":400
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Series":[
+          {
+            "id":"112016957590698501957"
+           ,"Identification":{
+              "Name":"Series 1"
+             ,"Type":"Bar"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"SELECT \r\n    b.TITLE AS BOOK_TITLE,\r\n    AVG(r.RATING) AS AVERAGE_RATING\r\nFROM \r\n    BOOKS b\r\nJOIN \r\n    REVIEWS r ON b.TITLE = r.BOOK_NAME\r\nGROUP BY \r\n    b.BOOK_ID, b.TITLE\r\nHAVING \r\n    AVG(r.RATING) \u003E 3\r\nORDER BY \r\n    AVERAGE_RATING DESC\r\nFETCH FIRST 10 ROWS ONLY;\r\n"
+            }
+           ,"Column Mapping":{
+              "Label":"BOOK_TITLE"
+             ,"Value":"AVERAGE_RATING"
+             ,"Label Tooltip":"BOOK_TITLE"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Line":{
+              "Style":"Solid"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":5
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"112016955935385501956"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"112016956520042501956"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"None"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

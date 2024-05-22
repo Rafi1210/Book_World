@@ -1,0 +1,152 @@
+[
+  {
+    "id":"103333270629233026561"
+   ,"Identification":{
+      "Name":"Commented Out"
+    }
+   ,"Status":{
+      "Status":"Exclude"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Subscription":{
+      "Version Number":15526669352883
+    }
+  }
+ ,{
+    "id":"103333568281216026776"
+   ,"Identification":{
+      "Name":"Feature: Access Control"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Incorporate role based user authentication within your application and manage username mappings to application roles."
+    }
+   ,"Subscription":{
+      "Version Number":15526669359301
+    }
+  }
+ ,{
+    "id":"103333568377923026776"
+   ,"Identification":{
+      "Name":"Feature: Activity Reporting"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Include numerous reports and charts on end user activity."
+    }
+   ,"Subscription":{
+      "Version Number":15526669359334
+    }
+  }
+ ,{
+    "id":"103333568400204026776"
+   ,"Identification":{
+      "Name":"Feature: Feedback"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Provide a mechanism for end users to post general comments back to the application administrators and developers."
+    }
+   ,"Subscription":{
+      "Version Number":15526669359360
+    }
+  }
+ ,{
+    "id":"103333568624869026776"
+   ,"Identification":{
+      "Name":"Feature: Configuration Options"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Allow application administrators to enable or disable specific functionality, associated with an Oracle APEX build option, from within the application."
+    }
+   ,"Subscription":{
+      "Version Number":15526669359233
+    }
+  }
+ ,{
+    "id":"103333568965110026776"
+   ,"Identification":{
+      "Name":"Feature: About Page"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"About this application page."
+    }
+   ,"Subscription":{
+      "Version Number":15526669359386
+    }
+  }
+ ,{
+    "id":"103333569068264026776"
+   ,"Identification":{
+      "Name":"Feature: Theme Style Selection"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Allow administrators to select a default color scheme (theme style) for the application. Administrators can also choose to allow end users to choose their own theme style. "
+    }
+   ,"Subscription":{
+      "Version Number":15526669359403
+    }
+  }
+ ,{
+    "id":"103334315941329030972"
+   ,"Identification":{
+      "Name":"Feature: Push Notifications"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Allow users to subscribe to push notifications on their devices."
+    }
+   ,"Subscription":{
+      "Version Number":15526669579269
+    }
+  }
+ ,{
+    "id":"103334316273198030972"
+   ,"Identification":{
+      "Name":"Feature: User Settings"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"The user settings page is a drawer that links to all user settings pages."
+    }
+   ,"Subscription":{
+      "Version Number":15526669579272
+    }
+  }
+]

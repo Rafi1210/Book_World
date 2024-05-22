@@ -1,0 +1,836 @@
+{
+  "id":"10034"
+ ,"Identification":{
+    "Name":"Page Views"
+   ,"Alias":"PAGE-VIEWS"
+   ,"Title":"Page Views"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Modal Dialog (103333292930980026574)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"ui-dialog--stretch"
+     ,"t-Dialog--noPadding"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Help":{
+    "Help Text":"\u003Cp\u003EThis page provides an interactive report of the most recent page views.\u003C\/p\u003E\n\u003Cp\u003ESelect the reporting timeframe (Default = 1 day) at the top of the page as necessary.\u003Cbr\u003E\nClick on the column headings to sort and filter data, or click on the \u003Cstrong\u003EActions\u003C\/strong\u003E button to customize column display and many additional advanced features. Click the \u003Cstrong\u003EReset\u003C\/strong\u003E button to reset the interactive report back to the default settings.\u003C\/p\u003E"
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Activity Reporting (103333568377923026776)"
+  }
+ ,"Regions":[
+    {
+      "id":"103333936323378030260"
+     ,"Identification":{
+        "Title":"Page Views"
+       ,"Type":"Interactive Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \n    step_id||\u0027. \u0027||(select page_name\n                    from apex_application_pages p\n                    where p.page_id = l.step_id\n                        and p.application_id = :APP_ID) page_name,\n    userid_lc     user_id,\n    time_stamp    timestamp,\n    elap          elapsed,\n    step_id       page,\n    decode(page_mode,\u0027P\u0027,\u0027Partial\u0027,\u0027D\u0027,\u0027Full\u0027,page_mode) page_mode,\n    component_name,\n    num_rows,\n    ir_search,\n    sqlerrm  error\nfrom apex_activity_log l\nwhere flow_id = :app_id\n    and time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10034_TIMEFRAME )\n    and userid is not null\n    and step_id is not null\norder by time_stamp desc"
+       ,"Page Items to Submit":[
+          "P10034_TIMEFRAME"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (103333365133491026609)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-IRR-region--noBorders"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103333936978428030260"
+       ,"Link":{
+          "Link Column":"Exclude Link Column"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+         ,"When More Data Found":"The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query."
+        }
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":true
+         ,"Reports Select List":true
+         ,"Rows Per Page Selector":false
+        }
+       ,"Actions Menu":{
+          "Include Actions Menu":true
+         ,"Filter":true
+         ,"Select Columns":true
+         ,"Rows Per Page":true
+         ,"Sort":true
+         ,"Control Break":true
+         ,"Highlight":true
+         ,"Compute":true
+         ,"Aggregate":true
+         ,"Chart":true
+         ,"Group By":true
+         ,"Pivot":true
+         ,"Flashback":true
+         ,"Save Report":true
+         ,"Save Public Report":false
+         ,"Reset":true
+         ,"Help":true
+         ,"Download":true
+         ,"Subscription":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"103333944766225030269"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"1033339448"
+            }
+          }
+        ]
+       ,"Columns":[
+          {
+            "id":"103333937329742030261"
+           ,"Identification":{
+              "Column Name":"PAGE_NAME"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Page Name"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":1
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333937763008030262"
+           ,"Identification":{
+              "Column Name":"USER_ID"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"User"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":2
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333938134493030262"
+           ,"Identification":{
+              "Column Name":"TIMESTAMP"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Timestamp"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":3
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"SINCE"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+             ,"Date Ranges":"All"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333938564491030263"
+           ,"Identification":{
+              "Column Name":"ELAPSED"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Elapsed"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":4
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G990D0000"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333938961812030263"
+           ,"Identification":{
+              "Column Name":"PAGE"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Page"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":5
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333939352590030263"
+           ,"Identification":{
+              "Column Name":"PAGE_MODE"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Mode"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":6
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333939744286030264"
+           ,"Identification":{
+              "Column Name":"COMPONENT_NAME"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Component Name"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":7
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333940146995030264"
+           ,"Identification":{
+              "Column Name":"NUM_ROWS"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Num Rows"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":8
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G990"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333940537306030265"
+           ,"Identification":{
+              "Column Name":"IR_SEARCH"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"IR Search"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":9
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G990"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333940904679030265"
+           ,"Identification":{
+              "Column Name":"ERROR"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Error"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":10
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+        ]
+       ,"Printing":{
+          "Output":{
+            "View File As":"Attachment"
+          }
+         ,"Page":{
+            "Size":"Letter"
+           ,"Orientation":"Landscape"
+           ,"Units":"Inches"
+           ,"Width":11
+           ,"Height":8.5
+           ,"Border Width":0.5
+           ,"Border Color":"#666666"
+          }
+         ,"Page Header":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+           ,"Page Header Text":"Page Views"
+          }
+         ,"Column Headings":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Bold"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#EEEEEE"
+          }
+         ,"Columns":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#FFFFFF"
+          }
+         ,"Page Footer":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+          }
+        }
+      }
+    }
+   ,{
+      "id":"103333936474218030260"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (103333311078147026585)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-ButtonRegion--slimPadding"
+         ,"t-ButtonRegion--noUI"
+         ,"t-Form--large"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103333936266768030260"
+     ,"Identification":{
+        "Name":"P10034_TIMEFRAME"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Timeframe"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (103333936474218030260)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional (103333445409681026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"TIMEFRAME (4 WEEKS) (103333932812091030255)"
+       ,"Display Extra Values":false
+       ,"Display Null Value":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Static Value"
+       ,"Static Value":"900"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103333945632789030270"
+     ,"Identification":{
+        "Button Name":"RESET_REPORT"
+       ,"Label":"Reset"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Page Views (103333936323378030260)"
+       ,"Position":"RIGHT_OF_IR_SEARCH_BAR"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-undo-alt"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:\u0026APP_PAGE_ID.:\u0026APP_SESSION.::\u0026DEBUG.:\u0026APP_PAGE_ID.,RR::"
+         ,"Page":"\u0026APP_PAGE_ID."
+         ,"Clear Cache":"\u0026APP_PAGE_ID.,RR"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103333936542046030260"
+     ,"Identification":{
+        "Name":"Refresh Report"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P10034_TIMEFRAME"
+        ]
+      }
+     ,"Actions":[
+        {
+          "id":"103333946966296030273"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Page Views (103333936323378030260)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Refresh Report (103333936542046030260)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

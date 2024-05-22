@@ -1,0 +1,1027 @@
+{
+  "id":"10000"
+ ,"Identification":{
+    "Name":"Administration"
+   ,"Alias":"ADMINISTRATION"
+   ,"Title":"Administration"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Disabled"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Help":{
+    "Help Text":"\u003Cp\u003EThe administration page allows application owners (Administrators) to configure the application and maintain common data used across the application.\nBy selecting one of the available settings, administrators can potentially change how the application is displayed and\/or features available to the end users.\u003C\/p\u003E\n\u003Cp\u003EAccess to this page should be limited to Administrators only.\u003C\/p\u003E"
+  }
+ ,"Regions":[
+    {
+      "id":"103334287982367030591"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (103333271254884026562)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (103333387368528026620)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (103333451874840026652)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"103334294506510030595"
+     ,"Identification":{
+        "Title":"Column 1"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (103333309692086026584)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103334294927384030595"
+     ,"Identification":{
+        "Title":"Configuration"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"Application Configuration (103334288695648030592)"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"Column 1 (103334294506510030595)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Configuration Options (103333568624869026776)"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Media List (103333431189948026641)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"u-colors"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"103334295352330030596"
+     ,"Identification":{
+        "Title":"User Interface"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"User Interface (103334289361987030592)"
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"Column 1 (103334294506510030595)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Theme Style Selection (103333569068264026776)"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Media List (103333431189948026641)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"u-colors"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"103334295775553030596"
+     ,"Identification":{
+        "Title":"Activity Reports"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"Activity Reports (103334290005546030593)"
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Parent Region":"Column 1 (103334294506510030595)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Activity Reporting (103333568377923026776)"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Media List (103333431189948026641)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"u-colors"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"103334296101293030596"
+     ,"Identification":{
+        "Title":"Column 2"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (103333309692086026584)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103334296588800030597"
+     ,"Identification":{
+        "Title":"Access Control"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Parent Region":"Column 2 (103334296101293030596)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Access Control (103333568281216026776)"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103334297375233030597"
+     ,"Identification":{
+        "Title":"ACL Information"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"PL\/SQL"
+       ,"PL\/SQL Function Body returning a CLOB":"declare\n    l_acl_scope varchar2(45);\nbegin\n    l_acl_scope := apex_app_setting.get_value( p_name =\u003E \u0027ACCESS_CONTROL_SCOPE\u0027 );\n\n    if l_acl_scope = \u0027ALL_USERS\u0027 then\n        return apex_lang.message(\u0027APEX.FEATURE.ACL.INFO.ALL_USERS\u0027);\n    elsif l_acl_scope = \u0027ACL_ONLY\u0027 then\n        return apex_lang.message(\u0027APEX.FEATURE.ACL.INFO.ACL_ONLY\u0027);\n    else\n        return apex_lang.message(\u0027APEX.FEATURE.ACL.INFO.ACL_VALUE_INVALID\u0027, l_acl_scope);\n    end if;\nend;"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"Access Control (103334296588800030597)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Alert (103333303055115026580)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Alert--colorBG"
+         ,"t-Alert--horizontal"
+         ,"t-Alert--noIcon"
+         ,"t-Alert--warning"
+         ,"t-Alert--accessibleHeading"
+        ]
+       ,"CSS Classes":[
+          "margin-sm"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"103334297777231030598"
+     ,"Identification":{
+        "Title":"User Counts Report"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select r.role_name, (select count(*) from apex_appl_acl_user_roles ur where r.role_id = ur.role_id) user_count, r.role_id\nfrom apex_appl_acl_roles r\nwhere r.application_id = :APP_ID\ngroup by r.role_name, r.role_id\norder by 2 desc, 1"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"Access Control (103334296588800030597)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--removeHeader"
+         ,"t-Region--stacked"
+         ,"t-Region--scrollBody"
+         ,"t-Region--noPadding"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Value Attribute Pairs - Row (103333418103574026635)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-AVPList--rightAligned"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"No Pagination (Show All Rows)"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"no data found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"103334298725882030602"
+         ,"Identification":{
+            "Column Name":"ROLE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Role Name"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":1
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103334299203898030602"
+         ,"Identification":{
+            "Column Name":"USER_COUNT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"User Count"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"999G999G999G999G999G999G990"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103334299633593030603"
+         ,"Identification":{
+            "Column Name":"ROLE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Role Id"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":3
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"103334308248296030782"
+     ,"Identification":{
+        "Title":"Access Control Actions"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"Access Control (103334292719360030594)"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"Access Control (103334296588800030597)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (103333308205665026583)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Media List (103333431189948026641)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"u-colors"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"103334308652911030783"
+     ,"Identification":{
+        "Title":"Feedback"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":80
+       ,"Parent Region":"Column 2 (103334296101293030596)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Feedback (103333568400204026776)"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103334309009386030783"
+     ,"Identification":{
+        "Title":"Report"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select l.display_value feedback_status, \n(select count(*) from apex_team_feedback f where f.application_id = :APP_ID and f.feedback_status = l.return_value) feedback_count \nfrom apex_application_lov_entries l\nwhere l.application_id = :APP_ID\nand l.list_of_values_name = \u0027FEEDBACK_STATUS\u0027\norder by 2 desc, 1"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"Feedback (103334308652911030783)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--removeHeader"
+         ,"t-Region--stacked"
+         ,"t-Region--scrollBody"
+         ,"t-Region--noPadding"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Value Attribute Pairs - Row (103333418103574026635)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-AVPList--rightAligned"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"No Pagination (Show All Rows)"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"no data found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"103334309748730030787"
+         ,"Identification":{
+            "Column Name":"FEEDBACK_STATUS"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Feedback Status"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":1
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103334310189001030788"
+         ,"Identification":{
+            "Column Name":"FEEDBACK_COUNT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Feedback Count"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"999G999G999G999G999G999G990"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"103334315389313030970"
+     ,"Identification":{
+        "Title":"Feedback"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"Feedback (103334293829563030595)"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"Feedback (103334308652911030783)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (103333308205665026583)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Media List (103333431189948026641)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"u-colors"
+          ]
+        }
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103334296966462030597"
+     ,"Identification":{
+        "Button Name":"ADD_USER"
+       ,"Label":"Add User"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Access Control (103334296588800030597)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--noUI"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-user-plus"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10042:\u0026APP_SESSION.::\u0026DEBUG.:RP,10042::"
+         ,"Page":"10042"
+         ,"Clear Cache":"RP,10042"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103334307355215030781"
+     ,"Identification":{
+        "Name":"Refresh Report"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSEDIALOG"
+       ,"Selection Type":"Button"
+       ,"Button":"ADD_USER (103334296966462030597)"
+      }
+     ,"Actions":[
+        {
+          "id":"103334307814110030781"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"User Counts Report (103334297777231030598)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Refresh Report (103334307355215030781)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

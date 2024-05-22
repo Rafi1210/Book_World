@@ -1,0 +1,957 @@
+{
+  "id":"10031"
+ ,"Identification":{
+    "Name":"Top Users"
+   ,"Alias":"TOP-USERS"
+   ,"Title":"Top Users"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Modal Dialog (103333292930980026574)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"ui-dialog--stretch"
+     ,"t-Dialog--noPadding"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"CSS":{
+    "Inline":".hour-graph { display: table; width: 100%; }\nspan.hour { display: table-cell; padding: 0; font-size: 11px; text-align: center; min-width: 32px; }\nspan.hour-label { opacity: 0.5; }\nspan.hour-value { display: block; }\nspan.hour { background-color: var(--ut-palette-success); color:  var(--ut-palette-success-contrast); }\nspan.hour.is-null { background-color: var(--ut-component-highlight-background-color); color: var(--ut-component-text-default-color); }\nspan.hour.is-over1k { background-color: var(--ut-palette-primary); color:  var(--ut-palette-primary-contrast); }"
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Help":{
+    "Help Text":"\u003Cp\u003EUse this report and chart to see the users with the most page views for the specified timeframe.\u003C\/p\u003E\n\u003Cp\u003ESelect the reporting timeframe (Default = 1 day) and choose between the report and chart icons at the top of the page.\u003C\/p\u003E\n\u003Cp\u003EFor the interactive report, use the search field, or select the \u003Cstrong\u003EUser\u003C\/strong\u003E column heading, to select a specific user. You can perform numerous functions by clicking the \u003Cstrong\u003EActions\u003C\/strong\u003E button, such as columns displayed \/ hidden, rows per page, filter, and so forth. Click the \u003Cstrong\u003EReset\u003C\/strong\u003E button to reset the interactive report back to the default settings.\u003C\/p\u003E"
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Activity Reporting (103333568377923026776)"
+  }
+ ,"Regions":[
+    {
+      "id":"103333968342450030297"
+     ,"Identification":{
+        "Title":"Top Users"
+       ,"Type":"Interactive Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select the_user,\n    \u0027\u003Cdiv class=\"hour-graph\"\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h00 = 0 then \u0027 is-null\u0027 when h00 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 0\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h00 \u003E 999 then to_char((h00\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h00) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h01 = 0 then \u0027 is-null\u0027 when h01 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 1\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h01 \u003E 999 then to_char((h01\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h01) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h02 = 0 then \u0027 is-null\u0027 when h02 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 2\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h02 \u003E 999 then to_char((h02\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h02) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h03 = 0 then \u0027 is-null\u0027 when h03 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 3\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h03 \u003E 999 then to_char((h03\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h03) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h04 = 0 then \u0027 is-null\u0027 when h04 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 4\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h04 \u003E 999 then to_char((h04\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h04) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h05 = 0 then \u0027 is-null\u0027 when h05 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 5\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h05 \u003E 999 then to_char((h05\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h05) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h06 = 0 then \u0027 is-null\u0027 when h06 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 6\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h06 \u003E 999 then to_char((h06\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h06) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h07 = 0 then \u0027 is-null\u0027 when h07 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 7\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h07 \u003E 999 then to_char((h07\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h07) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h08 = 0 then \u0027 is-null\u0027 when h08 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 8\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h08 \u003E 999 then to_char((h08\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h08) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h09 = 0 then \u0027 is-null\u0027 when h09 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E 9\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h09 \u003E 999 then to_char((h09\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h09) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h10 = 0 then \u0027 is-null\u0027 when h10 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E10\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h10 \u003E 999 then to_char((h10\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h10) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h11 = 0 then \u0027 is-null\u0027 when h11 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E11\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h11 \u003E 999 then to_char((h11\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h11) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h12 = 0 then \u0027 is-null\u0027 when h12 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E12\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h12 \u003E 999 then to_char((h12\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h12) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h13 = 0 then \u0027 is-null\u0027 when h13 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E13\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h13 \u003E 999 then to_char((h13\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h13) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h14 = 0 then \u0027 is-null\u0027 when h14 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E14\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h14 \u003E 999 then to_char((h14\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h14) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h15 = 0 then \u0027 is-null\u0027 when h15 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E15\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h15 \u003E 999 then to_char((h15\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h15) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h16 = 0 then \u0027 is-null\u0027 when h16 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E16\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h16 \u003E 999 then to_char((h16\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h16) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h17 = 0 then \u0027 is-null\u0027 when h17 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E17\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h17 \u003E 999 then to_char((h17\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h17) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h18 = 0 then \u0027 is-null\u0027 when h18 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E18\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h18 \u003E 999 then to_char((h18\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h18) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h19 = 0 then \u0027 is-null\u0027 when h19 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E19\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h19 \u003E 999 then to_char((h19\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h19) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h20 = 0 then \u0027 is-null\u0027 when h20 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E20\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h20 \u003E 999 then to_char((h20\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h20) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h21 = 0 then \u0027 is-null\u0027 when h21 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E21\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h21 \u003E 999 then to_char((h21\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h21) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h22 = 0 then \u0027 is-null\u0027 when h22 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E22\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h22 \u003E 999 then to_char((h22\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h22) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003Cspan class=\"hour\u0027|| case when h23 = 0 then \u0027 is-null\u0027 when h23 \u003E 999 then \u0027 is-over1k\u0027 end ||\u0027\"\u003E\u003Cspan class=\"hour-label\"\u003E23\u003C\/span\u003E \u003Cspan class=\"hour-value\"\u003E\u0027|| \n        case when h23 \u003E 999 then to_char((h23\/1000),\u002799999999D0\u0027) ||\u0027k\u0027 else to_char(h23) end ||\u0027\u003C\/span\u003E\u003C\/span\u003E\u0027||\n        \u0027\u003C\/div\u003E\u0027 hours,\n        page_events,\n    median_elapsed,\n    rows_fetched,\n    ir_searches,\n    errors,\n    most_recent\n    from (  \n    select userid_lc                    as the_user,\n        count(*)                        as page_events,\n        median(elap)                    as median_elapsed,\n        sum(num_rows)                   as rows_fetched,\n        sum(decode(ir_search,null,0,1)) as ir_searches,\n        sum(decode(sqlerrm,null,0,1))   as errors,\n        max(time_stamp)                 as most_recent,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),0,1,0)) h00,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),1,1,0)) h01,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),2,1,0)) h02,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),3,1,0)) h03,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),4,1,0)) h04,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),5,1,0)) h05,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),6,1,0)) h06,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),7,1,0)) h07,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),8,1,0)) h08,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),9,1,0)) h09,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),10,1,0)) h10,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),11,1,0)) h11,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),12,1,0)) h12,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),13,1,0)) h13,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),14,1,0)) h14,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),15,1,0)) h15,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),16,1,0)) h16,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),17,1,0)) h17,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),18,1,0)) h18,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),19,1,0)) h19,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),20,1,0)) h20,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),21,1,0)) h21,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),22,1,0)) h22,\n        sum(decode(to_char(time_stamp,\u0027HH24\u0027),23,1,0)) h23\n    from apex_activity_log l\n    where flow_id = :APP_ID\n        and time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10031_TIMEFRAME )\n        and userid is not null\n    group by userid_lc) x"
+       ,"Page Items to Submit":[
+          "P10031_TIMEFRAME"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (103333365133491026609)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-IRR-region--noBorders"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P10031_VIEW_AS"
+       ,"Value":"REPORT"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103333969461894030297"
+       ,"Link":{
+          "Link Column":"Exclude Link Column"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+         ,"When More Data Found":"The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query."
+        }
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":true
+         ,"Reports Select List":true
+         ,"Rows Per Page Selector":false
+        }
+       ,"Actions Menu":{
+          "Include Actions Menu":true
+         ,"Filter":true
+         ,"Select Columns":true
+         ,"Rows Per Page":true
+         ,"Sort":true
+         ,"Control Break":true
+         ,"Highlight":true
+         ,"Compute":true
+         ,"Aggregate":true
+         ,"Chart":true
+         ,"Group By":true
+         ,"Pivot":true
+         ,"Flashback":true
+         ,"Save Report":true
+         ,"Save Public Report":false
+         ,"Reset":true
+         ,"Help":true
+         ,"Download":true
+         ,"Subscription":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"103333975894283030312"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"1033339759"
+            }
+          }
+        ]
+       ,"Columns":[
+          {
+            "id":"103333969848539030300"
+           ,"Identification":{
+              "Column Name":"THE_USER"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"User"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":1
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333970250734030301"
+           ,"Identification":{
+              "Column Name":"HOURS"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Activity by Hour"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":2
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":false
+            }
+          }
+         ,{
+            "id":"103333970680645030302"
+           ,"Identification":{
+              "Column Name":"PAGE_EVENTS"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Page Events"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":3
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G990"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333971098931030303"
+           ,"Identification":{
+              "Column Name":"MEDIAN_ELAPSED"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Median Elapsed"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":4
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G990D0000"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333971494626030303"
+           ,"Identification":{
+              "Column Name":"ROWS_FETCHED"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Rows Fetched"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":5
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G990"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333971806484030304"
+           ,"Identification":{
+              "Column Name":"IR_SEARCHES"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"IR Search"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":6
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G999G990"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333972216501030305"
+           ,"Identification":{
+              "Column Name":"ERRORS"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Errors"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":7
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"999G999G999G999G999G999G990"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103333972669151030306"
+           ,"Identification":{
+              "Column Name":"MOST_RECENT"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Most_Recent"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":8
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Appearance":{
+              "Format Mask":"SINCE"
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+             ,"Date Ranges":"All"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+        ]
+       ,"Printing":{
+          "Output":{
+            "View File As":"Attachment"
+          }
+         ,"Page":{
+            "Size":"Letter"
+           ,"Orientation":"Landscape"
+           ,"Units":"Inches"
+           ,"Width":11
+           ,"Height":8.5
+           ,"Border Width":0.5
+           ,"Border Color":"#666666"
+          }
+         ,"Page Header":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+           ,"Page Header Text":"Top Users"
+          }
+         ,"Column Headings":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Bold"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#EEEEEE"
+          }
+         ,"Columns":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#FFFFFF"
+          }
+         ,"Page Footer":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+          }
+        }
+      }
+    }
+   ,{
+      "id":"103333968492787030297"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (103333311078147026585)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-ButtonRegion--slimPadding"
+         ,"t-ButtonRegion--noUI"
+         ,"t-Form--large"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103333968622832030297"
+     ,"Identification":{
+        "Title":"Top Users Chart"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (103333308205665026583)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--hideHeader"
+         ,"t-Region--hiddenOverflow"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P10031_VIEW_AS"
+       ,"Value":"CHART"
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103333968729908030297"
+       ,"Chart":{
+          "Type":"Donut"
+        }
+       ,"Layout":{
+          "Height":600
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Settings":{
+          "Pie Selection Effect":"Highlight"
+        }
+       ,"Value":{
+          "Pie Chart Other Threshold":0.02
+         ,"Format":"Decimal"
+         ,"Decimal Places":0
+         ,"Format Scaling":"Automatic"
+        }
+       ,"Animation":{
+          "On Display":"None"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Advanced":{
+          "Initialization JavaScript Function":"function( options ){ \n\n    this.pieSliceLabel = function(dataContext) {\n        var series_name,\n            percent = Math.round(dataContext.value\/dataContext.totalValue*100);\n        \n        if ( dataContext.seriesData ) {\n            series_name = dataContext.seriesData.name;\n        } else {\n            series_name = \u0027Other\u0027;\n        }\n        return series_name + \" \" + percent + \"% ( \" + dataContext.value + \" )\";\n    }\n    \n    \/\/ Set chart initialization options \n    options.dataLabel = pieSliceLabel; \n    return options; \n}"
+        }
+       ,"Series":[
+          {
+            "id":"103333979554499030316"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"select userid_lc as userid,\n       count(*) as page_views\n  from apex_activity_log\n where flow_id     = :app_id\n   and time_stamp \u003E= sysdate - ( 1\/24\/60\/60 * :P10031_TIMEFRAME )\n   and userid     is not null\n group by userid_lc\n order by 2"
+             ,"Page Items to Submit":[
+                "P10031_TIMEFRAME"
+              ]
+            }
+           ,"Column Mapping":{
+              "Label":"USERID"
+             ,"Value":"PAGE_VIEWS"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Outside Slice"
+             ,"Display As":"Label"
+            }
+          }
+        ]
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103333968817342030297"
+     ,"Identification":{
+        "Name":"P10031_VIEW_AS"
+       ,"Type":"Radio Group"
+      }
+     ,"Label":{
+        "Label":"View As"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":2
+       ,"Page Action on Selection":"Submit Page"
+       ,"Execute Validations":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Buttons (103333968492787030297)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (103333445341821026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form-fieldContainer--radioButtonGroup"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"VIEW_AS_REPORT_CHART (103333980028184030317)"
+       ,"Display Extra Values":false
+       ,"Display Null Value":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Static Value"
+       ,"Static Value":"REPORT"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103333969013488030297"
+     ,"Identification":{
+        "Name":"P10031_TIMEFRAME"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Timeframe"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (103333968492787030297)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional (103333445409681026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"TIMEFRAME (4 WEEKS) (103333932812091030255)"
+       ,"Display Extra Values":false
+       ,"Display Null Value":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Static Value"
+       ,"Static Value":"900"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103333976814824030313"
+     ,"Identification":{
+        "Button Name":"RESET_REPORT"
+       ,"Label":"Reset"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Top Users (103333968342450030297)"
+       ,"Position":"RIGHT_OF_IR_SEARCH_BAR"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-undo-alt"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:\u0026APP_PAGE_ID.:\u0026APP_SESSION.::\u0026DEBUG.:\u0026APP_PAGE_ID.,RR::"
+         ,"Page":"\u0026APP_PAGE_ID."
+         ,"Clear Cache":"\u0026APP_PAGE_ID.,RR"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103333968500093030297"
+     ,"Identification":{
+        "Name":"Refresh Report"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P10031_TIMEFRAME"
+        ]
+      }
+     ,"Actions":[
+        {
+          "id":"103333978139749030315"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Top Users (103333968342450030297)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Refresh Report (103333968500093030297)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"103333981574259030318"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Top Users (103333968342450030297)"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"Refresh Report (103333968500093030297)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

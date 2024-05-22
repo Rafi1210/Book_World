@@ -1,0 +1,482 @@
+{
+  "id":"4"
+ ,"Identification":{
+    "Name":"New Arrival"
+   ,"Alias":"NEW-ARRIVAL"
+   ,"Title":"New Arrival"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"111998830230738298911"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (103333271254884026562)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (103333387368528026620)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (103333451874840026652)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"111998830923493298912"
+     ,"Identification":{
+        "Title":"New Arrival"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    BOOK_ID,\n    TITLE,\n    AUTHOR_NAME,\n    GENRE,\n    PRICE,\n    ISBN,\n    PUBLISHER,\n    TO_CHAR(PUBLICATION_DATE, \u0027YYYY-MM-DD\u0027) AS PUBLICATION_DATE,\n    DESCRIPTION\nFROM \n    BOOKS\nWHERE \n    PUBLICATION_DATE \u003E= TRUNC(SYSDATE) - 90\nORDER BY \n    PUBLICATION_DATE DESC"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--hideHeader"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":50
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (103333413154485026632)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--stretch"
+           ,"t-Report--staticRowColors"
+           ,"t-Report--rowHighlight"
+           ,"t-Report--inline"
+           ,"t-Report--hideNoPagination"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"no data found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"111998831396809298913"
+         ,"Identification":{
+            "Column Name":"BOOK_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Book Id"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":1
+           ,"Column Alignment":"end"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998831797787298913"
+         ,"Identification":{
+            "Column Name":"TITLE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Title"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998832151428298913"
+         ,"Identification":{
+            "Column Name":"AUTHOR_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Author Name"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":3
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998832585957298914"
+         ,"Identification":{
+            "Column Name":"GENRE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Genre"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":4
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998832958640298914"
+         ,"Identification":{
+            "Column Name":"PRICE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Price"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":5
+           ,"Column Alignment":"end"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998833327790298914"
+         ,"Identification":{
+            "Column Name":"ISBN"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Isbn"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":6
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998833778167298915"
+         ,"Identification":{
+            "Column Name":"PUBLISHER"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Publisher"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":7
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998834150970298915"
+         ,"Identification":{
+            "Column Name":"PUBLICATION_DATE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Publication Date"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":8
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"111998834593243298915"
+         ,"Identification":{
+            "Column Name":"DESCRIPTION"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Description"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":9
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+  ]
+}

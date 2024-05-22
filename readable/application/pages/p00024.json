@@ -1,0 +1,794 @@
+{
+  "id":"24"
+ ,"Identification":{
+    "Name":"Books"
+   ,"Alias":"BOOKS"
+   ,"Title":"Books"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Left Side Column (103333274906664026565)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+   ,"Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"110871826896996923298"
+     ,"Identification":{
+        "Title":"Breadcumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (103333271254884026562)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (103333387368528026620)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (103333451874840026652)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"110871827587575923300"
+     ,"Identification":{
+        "Title":"Search Results"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select *\n  from BOOKS"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Wizard Container (103333392443494026622)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Wizard--hideStepsXSmall"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"111739950950518236406"
+       ,"Appearance":{
+          "Layout":"Grid"
+         ,"Grid Columns":"Auto"
+        }
+       ,"Card":{
+          "Primary Key Column 1":"BOOK_ID"
+        }
+       ,"Title":{
+          "Advanced Formatting":false
+         ,"Column":"TITLE"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+         ,"Column":"AUTHOR_NAME"
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+         ,"Column":"DESCRIPTION"
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"$ \u0026PRICE."
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"Icon Class"
+         ,"Icon CSS Classes":"fa-book"
+         ,"Icon Position":"Start"
+         ,"Icon Description":"\u0026TITLE."
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"BLOB Column"
+         ,"BLOB Column":"BOOKIMAGE"
+         ,"Position":"Body"
+         ,"Appearance":"Square"
+         ,"Sizing":"Cover"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+      }
+    }
+   ,{
+      "id":"110871827615182923300"
+     ,"Identification":{
+        "Title":"Search"
+       ,"Type":"Faceted Search"
+      }
+     ,"Source":{
+        "Filtered Region":"Search Results (110871827587575923300)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_02"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"4"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--hideHeader"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+       ,"Landmark Label":"Filters"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Batch Facet Changes":false
+         ,"Compact Numbers Threshold":10000
+         ,"Show Current Facets":"Selector"
+         ,"Current Facets Selector":"#active_facets"
+         ,"Show Total Row Count":"Yes"
+         ,"Show Charts":"Dialog"
+         ,"Display Chart for Top N Values":10
+        }
+      }
+     ,"Facets":[
+        {
+          "id":"110871828195482923300"
+         ,"Identification":{
+            "Name":"P24_SEARCH"
+           ,"Type":"Search"
+          }
+         ,"Label":{
+            "Label":"Search"
+          }
+         ,"Settings":{
+            "Search Type":"Row Search"
+           ,"Input Field":"Top of Faceted Search Region"
+          }
+         ,"Layout":{
+            "Sequence":10
+          }
+         ,"Source":{
+            "Database Column(s)":"TITLE,AUTHOR_NAME,GENRE,DESCRIPTION,ISBN,PUBLISHER"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+          }
+        }
+       ,{
+          "id":"110871828638983923302"
+         ,"Identification":{
+            "Name":"P24_PRICE"
+           ,"Type":"Range"
+          }
+         ,"Label":{
+            "Label":"Price"
+           ,"Show Label for Current Facet":true
+          }
+         ,"Settings":{
+            "Select Multiple":true
+           ,"Manual Entry":false
+          }
+         ,"Layout":{
+            "Sequence":20
+          }
+         ,"List of Values":{
+            "Type":"Static Values"
+           ,"Static Values":"STATIC2:\u003C10;|10,10 - 12;10|12,12 - 13;12|13,13 - 16;13|16,\u003E=16;16|"
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Show Selected First":false
+           ,"Maximum Displayed Entries":7
+           ,"Display Filter Initially":false
+          }
+         ,"Actions Menu":{
+            "Filter":true
+           ,"Chart":true
+          }
+         ,"Advanced":{
+            "Show Chart Initially":false
+           ,"Display Toggling":false
+           ,"Collapsible":false
+          }
+         ,"Source":{
+            "Database Column":"PRICE"
+           ,"Data Type":"NUMBER"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+          }
+        }
+       ,{
+          "id":"110871829067036923302"
+         ,"Identification":{
+            "Name":"P24_AUTHOR_NAME"
+           ,"Type":"Checkbox Group"
+          }
+         ,"Label":{
+            "Label":"Author Name"
+           ,"Show Label for Current Facet":true
+          }
+         ,"Layout":{
+            "Sequence":30
+          }
+         ,"List of Values":{
+            "Type":"Distinct Values"
+           ,"Sort Direction":"Ascending"
+           ,"Include Null Option":false
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Sort By Top Counts":true
+           ,"Show Selected First":false
+           ,"Maximum Displayed Entries":7
+           ,"Display Filter Initially":false
+          }
+         ,"Actions Menu":{
+            "Filter":true
+           ,"Chart":true
+          }
+         ,"Advanced":{
+            "Show Chart Initially":false
+           ,"Display Toggling":false
+           ,"Collapsible":false
+          }
+         ,"Source":{
+            "Database Column":"AUTHOR_NAME"
+           ,"Data Type":"VARCHAR2"
+          }
+         ,"Multiple Values":{
+            "Type":"No"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+           ,"Escape special characters":true
+          }
+        }
+       ,{
+          "id":"110871829478482923303"
+         ,"Identification":{
+            "Name":"P24_GENRE"
+           ,"Type":"Checkbox Group"
+          }
+         ,"Label":{
+            "Label":"Genre"
+           ,"Show Label for Current Facet":true
+          }
+         ,"Layout":{
+            "Sequence":40
+          }
+         ,"List of Values":{
+            "Type":"Distinct Values"
+           ,"Sort Direction":"Ascending"
+           ,"Include Null Option":false
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Sort By Top Counts":true
+           ,"Show Selected First":false
+           ,"Maximum Displayed Entries":7
+           ,"Display Filter Initially":false
+          }
+         ,"Actions Menu":{
+            "Filter":true
+           ,"Chart":true
+          }
+         ,"Advanced":{
+            "Show Chart Initially":false
+           ,"Display Toggling":false
+           ,"Collapsible":false
+          }
+         ,"Source":{
+            "Database Column":"GENRE"
+           ,"Data Type":"VARCHAR2"
+          }
+         ,"Multiple Values":{
+            "Type":"No"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+           ,"Escape special characters":true
+          }
+        }
+       ,{
+          "id":"110871829845793923303"
+         ,"Identification":{
+            "Name":"P24_PUBLISHER"
+           ,"Type":"Checkbox Group"
+          }
+         ,"Label":{
+            "Label":"Publisher"
+           ,"Show Label for Current Facet":true
+          }
+         ,"Layout":{
+            "Sequence":50
+          }
+         ,"List of Values":{
+            "Type":"Distinct Values"
+           ,"Sort Direction":"Ascending"
+           ,"Include Null Option":false
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Sort By Top Counts":true
+           ,"Show Selected First":false
+           ,"Maximum Displayed Entries":7
+           ,"Display Filter Initially":false
+          }
+         ,"Actions Menu":{
+            "Filter":true
+           ,"Chart":true
+          }
+         ,"Advanced":{
+            "Show Chart Initially":false
+           ,"Display Toggling":false
+           ,"Collapsible":false
+          }
+         ,"Source":{
+            "Database Column":"PUBLISHER"
+           ,"Data Type":"VARCHAR2"
+          }
+         ,"Multiple Values":{
+            "Type":"No"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+           ,"Escape special characters":true
+          }
+        }
+      ]
+     ,"Filters":[
+        {
+          "id":"110871828195482923300"
+         ,"Identification":{
+            "Name":"P24_SEARCH"
+           ,"Type":"Search"
+          }
+         ,"Label":{
+            "Label":"Search"
+          }
+         ,"Settings":{
+            "Search Type":"Row Search"
+           ,"Collapsed Search Field":false
+          }
+         ,"Layout":{
+            "Sequence":10
+          }
+         ,"Source":{
+            "Database Column(s)":"TITLE,AUTHOR_NAME,GENRE,DESCRIPTION,ISBN,PUBLISHER"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+          }
+        }
+       ,{
+          "id":"110871828638983923302"
+         ,"Identification":{
+            "Name":"P24_PRICE"
+           ,"Type":"Range"
+          }
+         ,"Label":{
+            "Label":"Price"
+          }
+         ,"Settings":{
+            "Select Multiple":true
+           ,"Manual Entry":false
+          }
+         ,"Layout":{
+            "Sequence":20
+          }
+         ,"List of Values":{
+            "Type":"Static Values"
+           ,"Static Values":"STATIC2:\u003C10;|10,10 - 12;10|12,12 - 13;12|13,13 - 16;13|16,\u003E=16;16|"
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Show Selected First":false
+           ,"Client-Side Filtering":false
+          }
+         ,"Suggestions":{
+            "Type":"None"
+          }
+         ,"Source":{
+            "Database Column":"PRICE"
+           ,"Data Type":"NUMBER"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+          }
+        }
+       ,{
+          "id":"110871829067036923302"
+         ,"Identification":{
+            "Name":"P24_AUTHOR_NAME"
+           ,"Type":"Checkbox Group"
+          }
+         ,"Label":{
+            "Label":"Author Name"
+          }
+         ,"Layout":{
+            "Sequence":30
+          }
+         ,"List of Values":{
+            "Type":"Distinct Values"
+           ,"Sort Direction":"Ascending"
+           ,"Include Null Option":false
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Sort By Top Counts":true
+           ,"Show Selected First":false
+           ,"Client-Side Filtering":false
+          }
+         ,"Suggestions":{
+            "Type":"None"
+          }
+         ,"Source":{
+            "Database Column":"AUTHOR_NAME"
+           ,"Data Type":"VARCHAR2"
+          }
+         ,"Multiple Values":{
+            "Type":"No"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+           ,"Escape special characters":true
+          }
+        }
+       ,{
+          "id":"110871829478482923303"
+         ,"Identification":{
+            "Name":"P24_GENRE"
+           ,"Type":"Checkbox Group"
+          }
+         ,"Label":{
+            "Label":"Genre"
+          }
+         ,"Layout":{
+            "Sequence":40
+          }
+         ,"List of Values":{
+            "Type":"Distinct Values"
+           ,"Sort Direction":"Ascending"
+           ,"Include Null Option":false
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Sort By Top Counts":true
+           ,"Show Selected First":false
+           ,"Client-Side Filtering":false
+          }
+         ,"Suggestions":{
+            "Type":"None"
+          }
+         ,"Source":{
+            "Database Column":"GENRE"
+           ,"Data Type":"VARCHAR2"
+          }
+         ,"Multiple Values":{
+            "Type":"No"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+           ,"Escape special characters":true
+          }
+        }
+       ,{
+          "id":"110871829845793923303"
+         ,"Identification":{
+            "Name":"P24_PUBLISHER"
+           ,"Type":"Checkbox Group"
+          }
+         ,"Label":{
+            "Label":"Publisher"
+          }
+         ,"Layout":{
+            "Sequence":50
+          }
+         ,"List of Values":{
+            "Type":"Distinct Values"
+           ,"Sort Direction":"Ascending"
+           ,"Include Null Option":false
+          }
+         ,"List Entries":{
+            "Compute Counts":true
+           ,"Show Counts":true
+           ,"Zero Count Entries":"Hide"
+           ,"Sort By Top Counts":true
+           ,"Show Selected First":false
+           ,"Client-Side Filtering":false
+          }
+         ,"Suggestions":{
+            "Type":"None"
+          }
+         ,"Source":{
+            "Database Column":"PUBLISHER"
+           ,"Data Type":"VARCHAR2"
+          }
+         ,"Multiple Values":{
+            "Type":"No"
+          }
+         ,"Security":{
+            "Store value encrypted in session state":true
+           ,"Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"110871830219175923303"
+     ,"Identification":{
+        "Title":"Button Bar"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cdiv id=\"active_facets\"\u003E\u003C\/div\u003E"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (103333311078147026585)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-ButtonRegion--noPadding"
+         ,"t-ButtonRegion--noUI"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"110866800296586560826"
+     ,"Identification":{
+        "Button Name":"Create"
+       ,"Label":"Create"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Button Bar (110871830219175923303)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--iconLeft"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:3:\u0026SESSION.::\u0026DEBUG.:::"
+         ,"Page":"3"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"110871830740569923304"
+     ,"Identification":{
+        "Button Name":"RESET"
+       ,"Label":"Reset"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Button Bar (110871830219175923303)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--noUI"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-undo"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:24:\u0026APP_SESSION.::\u0026DEBUG.:RR,24::"
+         ,"Page":"24"
+         ,"Clear Cache":"RR,24"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"110866800596192560829"
+     ,"Identification":{
+        "Name":"Edit Report - Dialog Closed"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSEDIALOG"
+       ,"Selection Type":"Region"
+       ,"Region":"Search Results (110871827587575923300)"
+      }
+     ,"Actions":[
+        {
+          "id":"110866800664870560830"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Search Results (110871827587575923300)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Edit Report - Dialog Closed (110866800596192560829)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

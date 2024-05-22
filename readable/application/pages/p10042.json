@@ -1,0 +1,592 @@
+{
+  "id":"10042"
+ ,"Identification":{
+    "Name":"Manage User Access"
+   ,"Alias":"MANAGE-USER-ACCESS1"
+   ,"Title":"Manage User Access"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":false
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"First item on page"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Help":{
+    "Help Text":"\u003Cp\u003EUse this form to enter users, their email address and set their access level. \nThe settings defined under \u003Cem\u003EConfigure Access Control\u003C\/em\u003E will determine whether the username must be their email address or can be any alphanumeric entry.\u003C\/p\u003E\n\u003Cp\u003EThis application supports the following 3 access levels: Reader, Contributor, and Administrator.\u003C\/p\u003E\n\u003Cul\u003E\n  \u003Cli\u003E\u003Cstrong\u003EReaders\u003C\/strong\u003E have read-only access to all information and can also view reports.\u003C\/li\u003E\n  \u003Cli\u003E\u003Cstrong\u003EContributors\u003C\/strong\u003E can create, edit and delete information and view reports.\u003C\/li\u003E\n  \u003Cli\u003E\u003Cstrong\u003EAdministrators\u003C\/strong\u003E, in addition to Contributors capability, can also perform configuration of the application by accessing the Administration section of the application.\u003C\/li\u003E\n\u003C\/ul\u003E\n\u003Cp\u003EWhen editing an existing user you can lock their account which will prevent them from accessing the application.\u003C\/p\u003E\n\u003Cp\u003E\u003Cem\u003E\u003Cstrong\u003ENote:\u003C\/strong\u003E   If using Oracle APEX accounts then users entered here must also be defined as end users by a Workspace Administrator, who can also set their password.\u003C\/em\u003E\u003C\/p\u003E"
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Access Control (103333568281216026776)"
+  }
+ ,"Regions":[
+    {
+      "id":"103334208001272030351"
+     ,"Identification":{
+        "Title":"Form on Manage User Access"
+       ,"Type":"Form"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"APEX_APPL_ACL_USERS"
+       ,"Include ROWID Column":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (103333308205665026583)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Edit":{
+          "Enabled":true
+         ,"Allowed Operations":[
+            "Add Row"
+           ,"Update Row"
+           ,"Delete Row"
+          ]
+         ,"Lost Update Type":"Row Values"
+        }
+      }
+    }
+   ,{
+      "id":"103334208195187030351"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (103333311078147026585)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103334211673476030354"
+     ,"Identification":{
+        "Name":"P10042_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Column":"ID"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103334212083661030354"
+     ,"Identification":{
+        "Name":"P10042_APPLICATION_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Column":"APPLICATION_ID"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"\u0026APP_ID."
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103334212547606030354"
+     ,"Identification":{
+        "Name":"P10042_USER_NAME"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Username"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Required - Floating (103333446999743026650)"
+       ,"Width":60
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":255
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Column":"USER_NAME"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Read Only":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P10042_ID"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103334212946509030354"
+     ,"Identification":{
+        "Name":"P10042_ROLE_IDS"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Roles"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Required - Floating (103333446999743026650)"
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"ACCESS_ROLES (103334213045048030355)"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Form on Manage User Access (103334208001272030351)"
+       ,"Column":"ROLE_IDS"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+     ,"Help":{
+        "Help Text":"\u003Cp\u003EWhen Access Control is enabled, Administrators have the ability to restrict access to certain application features for authenticated users. This application supports the following 3 roles: Reader, Contributor, and Administrator.\u003Cp\u003E\n\u003Cul\u003E\n  \u003Cli\u003E\u003Cstrong\u003EReaders\u003C\/strong\u003E have read-only access to all information and can also view reports.\u003C\/li\u003E\n  \u003Cli\u003E\u003Cstrong\u003EContributors\u003C\/strong\u003E can create,edit and delete information and view reports.\u003C\/li\u003E\n  \u003Cli\u003E\u003Cstrong\u003EAdministrators\u003C\/strong\u003E,in addition to Contributors capability,can also perform configuration of the application.\u003C\/li\u003E\n\u003C\/ul\u003E"
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103334209165196030352"
+     ,"Identification":{
+        "Button Name":"CANCEL"
+       ,"Label":"Cancel"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (103334208195187030351)"
+       ,"Position":"PREVIOUS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":false
+      }
+    }
+   ,{
+      "id":"103334210579585030353"
+     ,"Identification":{
+        "Button Name":"DELETE"
+       ,"Label":"Delete"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Buttons (103334208195187030351)"
+       ,"Position":"PREVIOUS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--danger"
+         ,"t-Button--simple"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":false
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL DELETE action"
+      }
+     ,"Confirmation":{
+        "Message":"\u0026APP_TEXT$DELETE_MSG!RAW."
+       ,"Style":"Danger"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P10042_ID"
+      }
+    }
+   ,{
+      "id":"103334210931677030353"
+     ,"Identification":{
+        "Button Name":"SAVE"
+       ,"Label":"Apply Changes"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Buttons (103334208195187030351)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":true
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL UPDATE action"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P10042_ID"
+      }
+    }
+   ,{
+      "id":"103334211306526030353"
+     ,"Identification":{
+        "Button Name":"CREATE"
+       ,"Label":"Add User"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Buttons (103334208195187030351)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":true
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL INSERT action"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NULL"
+       ,"Item":"P10042_ID"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103334209234741030352"
+     ,"Identification":{
+        "Name":"Cancel Dialog"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"CANCEL (103334209165196030352)"
+      }
+     ,"Actions":[
+        {
+          "id":"103334209968940030352"
+         ,"Identification":{
+            "Action":"Cancel Dialog"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Cancel Dialog (103334209234741030352)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"103334214448275030362"
+     ,"Identification":{
+        "Name":"Cannot remove yourself from administrator"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"if :P10042_USER_NAME = :APP_USER and\n    apex_acl.is_role_removed_from_user (\n        p_application_id =\u003E :APP_ID,\n        p_user_name      =\u003E :APP_USER,\n        p_role_static_id =\u003E \u0027ADMINISTRATOR\u0027,\n        p_role_ids       =\u003E apex_string.split_numbers(\n                                p_str =\u003E case when :REQUEST = \u0027DELETE\u0027 then\n                                             null\n                                         else\n                                             :P10042_ROLE_IDS\n                                         end,\n                                p_sep =\u003E \u0027:\u0027) ) then\n    return false;\nelse\n    return true;\nend if;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"You cannot remove administrator role from yourself."
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"103334214767231030363"
+     ,"Identification":{
+        "Name":"Initialize form Manage User Access"
+       ,"Type":"Form - Initialization"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Form on Manage User Access (103334208001272030351)"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"After Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"103334215192433030363"
+     ,"Identification":{
+        "Name":"Process form Manage User Access"
+       ,"Type":"Form - Automatic Row Processing (DML)"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Form on Manage User Access (103334208001272030351)"
+      }
+     ,"Settings":{
+        "Target Type":"Region Source"
+       ,"Prevent Lost Updates":true
+       ,"Lock Row":"No"
+       ,"Return Primary Key(s) after Insert":false
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"103334215528857030363"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Settings":{
+        "Show Success Messages":true
+      }
+     ,"Execution":{
+        "Sequence":40
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+  ]
+}

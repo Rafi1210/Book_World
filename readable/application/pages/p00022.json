@@ -1,0 +1,620 @@
+{
+  "id":"22"
+ ,"Identification":{
+    "Name":"Dashboard"
+   ,"Alias":"DASHBOARD"
+   ,"Title":"Dashboard"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"109931081359532485257"
+     ,"Identification":{
+        "Title":"Top Orders Last Week according to Quantity "
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"CART"
+       ,"Include ROWID Column":false
+      }
+     ,"Order By":{
+        "Type":"None"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"109931081751789485257"
+       ,"Chart":{
+          "Type":"Pie"
+        }
+       ,"Title":{
+          "Title":"Top Orders"
+        }
+       ,"Layout":{
+          "Height":400
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Settings":{
+          "Pie Selection Effect":"Highlight"
+        }
+       ,"Value":{
+          "Pie Chart Other Threshold":0
+         ,"Format":"Decimal"
+         ,"Decimal Places":0
+         ,"Format Scaling":"None"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"109931083496631485258"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"Table \/ View"
+             ,"Table Owner":"Parsing Schema"
+             ,"Table Name":"CART"
+             ,"Include ROWID Column":false
+            }
+           ,"Order By":{
+              "Type":"None"
+            }
+           ,"Column Mapping":{
+              "Series Name":"BOOK_NAME"
+             ,"Label":"BOOK_NAME"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"QUANTITY"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+             ,"Display As":"Label"
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":20
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"109931084081381485259"
+     ,"Identification":{
+        "Title":"BOOKS IN WISHLIST"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"109931084461651485259"
+       ,"Chart":{
+          "Type":"Pie"
+        }
+       ,"Layout":{
+          "Height":400
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Settings":{
+          "Pie Selection Effect":"Highlight"
+        }
+       ,"Value":{
+          "Pie Chart Other Threshold":0
+         ,"Format":"Decimal"
+         ,"Decimal Places":0
+         ,"Format Scaling":"None"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"109931084906506485259"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"Table \/ View"
+             ,"Table Owner":"Parsing Schema"
+             ,"Table Name":"WISHLIST"
+             ,"Include ROWID Column":false
+            }
+           ,"Order By":{
+              "Type":"None"
+            }
+           ,"Column Mapping":{
+              "Series Name":"WISHLIST_ID"
+             ,"Label":"BOOK_NAME"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"WISHLIST_ID"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+             ,"Display As":"Label"
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":20
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"109931085542713485259"
+     ,"Identification":{
+        "Title":"Price according to Genres "
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"BOOKS"
+       ,"Include ROWID Column":false
+      }
+     ,"Order By":{
+        "Type":"None"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"109931085920350485260"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Series":[
+          {
+            "id":"109931087618651485261"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"Table \/ View"
+             ,"Table Owner":"Parsing Schema"
+             ,"Table Name":"BOOKS"
+             ,"Include ROWID Column":false
+            }
+           ,"Order By":{
+              "Type":"None"
+            }
+           ,"Column Mapping":{
+              "Label":"GENRE"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"PRICE"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":20
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"109931086460291485260"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"109931087048925485260"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Automatic"
+            }
+           ,"Minor Ticks":{
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"109931088200051485261"
+     ,"Identification":{
+        "Title":"Wishlist according to Wishlist_Id"
+       ,"Type":"Chart"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (103333374994509026614)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"109931088643934485261"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Layout":{
+          "Height":400
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":false
+        }
+       ,"Series":[
+          {
+            "id":"109931090313139485262"
+           ,"Identification":{
+              "Name":"Series 1"
+            }
+           ,"Execution":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"Table \/ View"
+             ,"Table Owner":"Parsing Schema"
+             ,"Table Name":"WISHLIST"
+             ,"Include ROWID Column":false
+            }
+           ,"Order By":{
+              "Type":"None"
+            }
+           ,"Column Mapping":{
+              "Series Name":"ADDED_AT"
+             ,"Label":"BOOK_NAME"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"WISHLIST_ID"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+           ,"Performance":{
+              "Maximum Rows to Process":20
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"111739954772740236444"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"111739954812627236445"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"None"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

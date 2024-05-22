@@ -1,0 +1,299 @@
+{
+  "id":"25"
+ ,"Identification":{
+    "Name":"WishlistRemove"
+   ,"Alias":"WISHLISTREMOVE"
+   ,"Title":"WishlistRemove"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (103333272006910026562)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+   ,"Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"215069509609574872277"
+     ,"Identification":{
+        "Title":"Wishlist"
+       ,"Type":"Form"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"WISHLIST"
+       ,"Include ROWID Column":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (103333308205665026583)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Edit":{
+          "Enabled":true
+         ,"Allowed Operations":[
+            "Add Row"
+           ,"Update Row"
+           ,"Delete Row"
+          ]
+         ,"Lost Update Type":"Row Values"
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"215069510321349872279"
+     ,"Identification":{
+        "Name":"P25_WISHLIST_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Wishlist (215069509609574872277)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wishlist (215069509609574872277)"
+       ,"Column":"WISHLIST_ID"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"215069510767110872279"
+     ,"Identification":{
+        "Name":"P25_USER_ID"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"User Id"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Wishlist (215069509609574872277)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Required - Floating (103333446999743026650)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"USER_ACCOUNT.USER_ID (111398332226823712251)"
+       ,"Display Extra Values":true
+       ,"Display Null Value":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wishlist (215069509609574872277)"
+       ,"Column":"USER_ID"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"215069511148349872280"
+     ,"Identification":{
+        "Name":"P25_BOOK_NAME"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Book Name"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Wishlist (215069509609574872277)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Required - Floating (103333446999743026650)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"BOOKS.TITLE (103333604336107027235)"
+       ,"Display Extra Values":true
+       ,"Display Null Value":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wishlist (215069509609574872277)"
+       ,"Column":"BOOK_NAME"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"111555294869639189220"
+     ,"Identification":{
+        "Button Name":"DELETE"
+       ,"Label":"Delete"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Wishlist (215069509609574872277)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Alignment":"Left center"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL DELETE action"
+      }
+    }
+  ]
+}

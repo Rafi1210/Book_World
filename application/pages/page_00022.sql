@@ -1,0 +1,296 @@
+prompt --application/pages/page_00022
+begin
+--   Manifest
+--     PAGE: 00022
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.10.31'
+,p_release=>'23.2.4'
+,p_default_workspace_id=>101552441239654991975
+,p_default_application_id=>215031
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_ONLINEBOOKSTORE'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>22
+,p_name=>'Dashboard'
+,p_alias=>'DASHBOARD'
+,p_step_title=>'Dashboard'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'04'
+,p_last_updated_by=>'2022-1-60-261@STD.EWUBD.EDU'
+,p_last_upd_yyyymmddhh24miss=>'20240520025801'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(109931081359532485257)
+,p_plug_name=>'Top Orders Last Week according to Quantity '
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(103333374994509026614)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'CART'
+,p_include_rowid_column=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(109931081751789485257)
+,p_region_id=>wwv_flow_imp.id(109931081359532485257)
+,p_chart_type=>'pie'
+,p_title=>'Top Orders'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hide_and_show_behavior=>'withRescale'
+,p_hover_behavior=>'dim'
+,p_value_format_type=>'decimal'
+,p_value_decimal_places=>0
+,p_value_format_scaling=>'none'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'on'
+,p_legend_position=>'auto'
+,p_pie_other_threshold=>0
+,p_pie_selection_effect=>'highlight'
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(109931083496631485258)
+,p_chart_id=>wwv_flow_imp.id(109931081751789485257)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_data_source_type=>'TABLE'
+,p_max_row_count=>20
+,p_query_table=>'CART'
+,p_include_rowid_column=>false
+,p_series_name_column_name=>'BOOK_NAME'
+,p_items_value_column_name=>'QUANTITY'
+,p_items_label_column_name=>'BOOK_NAME'
+,p_items_label_rendered=>true
+,p_items_label_position=>'auto'
+,p_items_label_display_as=>'LABEL'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(109931084081381485259)
+,p_plug_name=>'BOOKS IN WISHLIST'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(103333374994509026614)
+,p_plug_display_sequence=>20
+,p_plug_new_grid_row=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(109931084461651485259)
+,p_region_id=>wwv_flow_imp.id(109931084081381485259)
+,p_chart_type=>'pie'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hide_and_show_behavior=>'withRescale'
+,p_hover_behavior=>'dim'
+,p_value_format_type=>'decimal'
+,p_value_decimal_places=>0
+,p_value_format_scaling=>'none'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'on'
+,p_legend_position=>'auto'
+,p_pie_other_threshold=>0
+,p_pie_selection_effect=>'highlight'
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(109931084906506485259)
+,p_chart_id=>wwv_flow_imp.id(109931084461651485259)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_data_source_type=>'TABLE'
+,p_max_row_count=>20
+,p_query_table=>'WISHLIST'
+,p_include_rowid_column=>false
+,p_series_name_column_name=>'WISHLIST_ID'
+,p_items_value_column_name=>'WISHLIST_ID'
+,p_items_label_column_name=>'BOOK_NAME'
+,p_items_label_rendered=>true
+,p_items_label_position=>'auto'
+,p_items_label_display_as=>'LABEL'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(109931085542713485259)
+,p_plug_name=>'Price according to Genres '
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(103333374994509026614)
+,p_plug_display_sequence=>30
+,p_query_type=>'TABLE'
+,p_query_table=>'BOOKS'
+,p_include_rowid_column=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(109931085920350485260)
+,p_region_id=>wwv_flow_imp.id(109931085542713485259)
+,p_chart_type=>'bar'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_orientation=>'vertical'
+,p_hide_and_show_behavior=>'withRescale'
+,p_hover_behavior=>'dim'
+,p_stack=>'off'
+,p_stack_label=>'off'
+,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
+,p_sorting=>'label-asc'
+,p_fill_multi_series_gaps=>true
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_group_name=>true
+,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
+,p_legend_rendered=>'off'
+,p_legend_position=>'auto'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(109931087618651485261)
+,p_chart_id=>wwv_flow_imp.id(109931085920350485260)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_data_source_type=>'TABLE'
+,p_max_row_count=>20
+,p_query_table=>'BOOKS'
+,p_include_rowid_column=>false
+,p_items_value_column_name=>'PRICE'
+,p_items_label_column_name=>'GENRE'
+,p_assigned_to_y2=>'off'
+,p_items_label_rendered=>false
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(109931086460291485260)
+,p_chart_id=>wwv_flow_imp.id(109931085920350485260)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'auto'
+,p_minor_tick_rendered=>'auto'
+,p_tick_label_rendered=>'on'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(109931087048925485260)
+,p_chart_id=>wwv_flow_imp.id(109931085920350485260)
+,p_axis=>'y'
+,p_is_rendered=>'on'
+,p_baseline_scaling=>'zero'
+,p_position=>'auto'
+,p_major_tick_rendered=>'auto'
+,p_minor_tick_rendered=>'auto'
+,p_tick_label_rendered=>'on'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(109931088200051485261)
+,p_plug_name=>'Wishlist according to Wishlist_Id'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(103333374994509026614)
+,p_plug_display_sequence=>40
+,p_plug_new_grid_row=>false
+,p_plug_source_type=>'NATIVE_JET_CHART'
+);
+wwv_flow_imp_page.create_jet_chart(
+ p_id=>wwv_flow_imp.id(109931088643934485261)
+,p_region_id=>wwv_flow_imp.id(109931088200051485261)
+,p_chart_type=>'bar'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_orientation=>'vertical'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hover_behavior=>'dim'
+,p_stack=>'off'
+,p_connect_nulls=>'Y'
+,p_sorting=>'label-asc'
+,p_fill_multi_series_gaps=>true
+,p_zoom_and_scroll=>'off'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_group_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'off'
+);
+wwv_flow_imp_page.create_jet_chart_series(
+ p_id=>wwv_flow_imp.id(109931090313139485262)
+,p_chart_id=>wwv_flow_imp.id(109931088643934485261)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_data_source_type=>'TABLE'
+,p_max_row_count=>20
+,p_query_table=>'WISHLIST'
+,p_include_rowid_column=>false
+,p_series_name_column_name=>'ADDED_AT'
+,p_items_value_column_name=>'WISHLIST_ID'
+,p_items_label_column_name=>'BOOK_NAME'
+,p_assigned_to_y2=>'off'
+,p_items_label_rendered=>false
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(111739954772740236444)
+,p_chart_id=>wwv_flow_imp.id(109931088643934485261)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+,p_tick_label_rotation=>'auto'
+,p_tick_label_position=>'outside'
+);
+wwv_flow_imp_page.create_jet_chart_axis(
+ p_id=>wwv_flow_imp.id(111739954812627236445)
+,p_chart_id=>wwv_flow_imp.id(109931088643934485261)
+,p_axis=>'y'
+,p_is_rendered=>'on'
+,p_format_type=>'decimal'
+,p_decimal_places=>0
+,p_format_scaling=>'none'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_position=>'auto'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+);
+wwv_flow_imp.component_end;
+end;
+/

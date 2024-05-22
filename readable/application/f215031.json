@@ -1,0 +1,318 @@
+{
+  "Identification":{
+    "Name":"BookWorld"
+   ,"Alias":"BOOK-WORLD"
+   ,"Version":"Release 1.0"
+  }
+ ,"Row Search":{
+    "Tokenize":true
+  }
+ ,"Availability":{
+    "Status":"Available with Developer Toolbar"
+   ,"Build Status":"Run and Build Application"
+  }
+ ,"Error Handling":{
+    "Default Display Location":"Inline with Field and in Notification"
+  }
+ ,"Report Printing":{
+    "Type":"Use Instance Settings"
+  }
+ ,"Advanced":{
+    "Friendly URLs":true
+   ,"Allow Feedback":true
+   ,"Logging":true
+   ,"Debugging":true
+   ,"Compatibility Mode":"21.2 \/ 22.1 \/ 22.2"
+   ,"Pass ECID":"Y"
+  }
+ ,"Authentication":{
+    "Public User":"APEX_PUBLIC_USER"
+   ,"Authentication Scheme":"Oracle APEX Accounts (103333270995566026561)"
+  }
+ ,"Authorization":{
+    "Authorization Scheme":"Reader Rights (103333571115749026778)"
+   ,"Run on Public Pages":false
+   ,"Run on Background Job":true
+   ,"Source for Role or Group Schemes":"Access Control User Role Assignments"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Disabled"
+  }
+ ,"Session State Protection":{
+    "Enabled":true
+  }
+ ,"Security":{
+    "Deep Linking":"Disabled"
+   ,"Browser Cache":"Disabled"
+   ,"Embed in Frames":"Deny"
+   ,"Referrer Policy":"strict-origin"
+   ,"HTML Escaping Mode":"Extended"
+   ,"Runtime API Usage":[
+      "Modify This Application"
+    ]
+  }
+ ,"Database Session":{
+    "Parsing Schema":"WKSP_ONLINEBOOKSTORE"
+  }
+ ,"Globalization":{
+    "Primary Language":"English (en)"
+   ,"Document Direction":"Left-To-Right"
+   ,"Language Derived From":"Application Primary Language"
+   ,"Automatic Time Zone":false
+   ,"Automatic CSV Encoding":true
+  }
+ ,"Application Format Masks":{
+    "Date":"DS"
+   ,"Timestamp":"DS"
+   ,"Timestamp Time Zone":"DS"
+  }
+ ,"Character Value Comparison":{
+    "Behavior":"Database session NLS setting (default)"
+  }
+ ,"Logo":{
+    "Type":"Text"
+   ,"Text":"BookWorld"
+  }
+ ,"Progressive Web App":{
+    "Enable":true
+   ,"Installable":false
+   ,"Display":"Standalone"
+   ,"Screen Orientation":"Any"
+   ,"iOS Status Bar Style":"Default"
+   ,"Enable Push Notifications":true
+   ,"PWA Push Notifications Credentials":"App 215031 Push Notifications Credentials (103334323058279030978)"
+  }
+ ,"Navigation":{
+    "Home URL":{
+      "url":"f?p=\u0026APP_ID.:1:\u0026APP_SESSION.::\u0026DEBUG.:::"
+     ,"Page":"1"
+    }
+   ,"Login URL":{
+      "url":"f?p=\u0026APP_ID.:LOGIN:\u0026APP_SESSION.::\u0026DEBUG.:::"
+     ,"Page":"LOGIN"
+    }
+  }
+ ,"Navigation Menu":{
+    "List Template":"Top Navigation Menu (103333441338231026647)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-tabLike"
+    ]
+   ,"List Position":"Top"
+   ,"List":"Navigation Menu (103333271785676026562)"
+  }
+ ,"Navigation Bar":{
+    "Implementation":"List"
+   ,"List":"Navigation Bar (103333565700058026768)"
+   ,"List Template":"Navigation Bar (103333435518755026644)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"JavaScript":{
+    "Include jQuery Migrate":false
+  }
+ ,"Attributes":{
+    "Theme":"Universal Theme (42)"
+   ,"Global Page":"0"
+   ,"Enable End Users to choose Theme Style":false
+   ,"Add \"Built with APEX\" to Footer":false
+  }
+ ,"Substitutions":[
+    {
+      "id":"1"
+     ,"Identification":{
+        "Name":"APP_NAME"
+      }
+     ,"Value":{
+        "Static Value":"Schema.Sql"
+      }
+    }
+  ]
+ ,"Component Settings":[
+    {
+      "id":"103333267626989026559"
+     ,"Identification":{
+        "Name":"NATIVE_COLOR_PICKER"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"FULL"
+       ,"Attribute 2":"POPUP"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352772
+      }
+    }
+   ,{
+      "id":"103333267953209026559"
+     ,"Identification":{
+        "Name":"NATIVE_DATE_PICKER_APEX"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"MONTH-PICKER:YEAR-PICKER:TODAY-BUTTON"
+       ,"Attribute 2":"VISIBLE"
+       ,"Attribute 3":"15"
+       ,"Attribute 4":"FOCUS"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352791
+      }
+    }
+   ,{
+      "id":"103333268291370026560"
+     ,"Identification":{
+        "Name":"NATIVE_GEOCODED_ADDRESS"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"RELAX_HOUSE_NUMBER"
+       ,"Attribute 2":"N"
+       ,"Attribute 3":"POPUP:ITEM"
+       ,"Attribute 4":"default"
+       ,"Attribute 6":"LIST"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352814
+      }
+    }
+   ,{
+      "id":"103333268598215026560"
+     ,"Identification":{
+        "Name":"NATIVE_SINGLE_CHECKBOX"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+       ,"Attribute 2":"N"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352818
+      }
+    }
+   ,{
+      "id":"103333268840245026560"
+     ,"Identification":{
+        "Name":"NATIVE_STAR_RATING"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"fa-star"
+       ,"Attribute 4":"#VALUE#"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352829
+      }
+    }
+   ,{
+      "id":"103333269179557026560"
+     ,"Identification":{
+        "Name":"NATIVE_YES_NO"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+       ,"Attribute 3":"N"
+       ,"Attribute 5":"SWITCH_CB"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352837
+      }
+    }
+   ,{
+      "id":"103333269429219026560"
+     ,"Identification":{
+        "Name":"NATIVE_DISPLAY_SELECTOR"
+       ,"Type":"Region"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352847
+      }
+    }
+   ,{
+      "id":"103333269799316026561"
+     ,"Identification":{
+        "Name":"NATIVE_IR"
+       ,"Type":"Region"
+      }
+     ,"Settings":{
+        "Attribute 1":"IG"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352855
+      }
+    }
+   ,{
+      "id":"103333270078381026561"
+     ,"Identification":{
+        "Name":"NATIVE_MAP_REGION"
+       ,"Type":"Region"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352865
+      }
+    }
+   ,{
+      "id":"103333270384307026561"
+     ,"Identification":{
+        "Name":"NATIVE_ADFBC"
+       ,"Type":"REST Data Source"
+      }
+     ,"Subscription":{
+        "Version Number":15526669352875
+      }
+    }
+  ]
+ ,"Application Settings":[
+    {
+      "id":"103333572012794026779"
+     ,"Identification":{
+        "Name":"FEEDBACK_ATTACHMENTS_YN"
+      }
+     ,"Value":{
+        "Value":"Y"
+       ,"Required":false
+      }
+     ,"Advanced":{
+        "Valid Values":"Y, N"
+       ,"On Upgrade Keep Value":true
+      }
+     ,"Subscription":{
+        "Version Number":15526669359490
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Feedback (103333568400204026776)"
+      }
+    }
+   ,{
+      "id":"103333572321932026779"
+     ,"Identification":{
+        "Name":"ACCESS_CONTROL_SCOPE"
+      }
+     ,"Value":{
+        "Value":"ALL_USERS"
+       ,"Required":false
+      }
+     ,"Advanced":{
+        "Valid Values":"ACL_ONLY, ALL_USERS"
+       ,"On Upgrade Keep Value":true
+      }
+     ,"Subscription":{
+        "Version Number":15530725444445
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Access Control (103333568281216026776)"
+      }
+     ,"Comments":{
+        "Comments":"The default access level given to authenticated users who are not in the access control list"
+      }
+    }
+  ]
+}

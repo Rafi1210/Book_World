@@ -1,0 +1,466 @@
+{
+  "id":"10041"
+ ,"Identification":{
+    "Name":"Manage User Access"
+   ,"Alias":"MANAGE-USER-ACCESS"
+   ,"Title":"Manage User Access"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Modal Dialog (103333292930980026574)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"ui-dialog--stretch"
+     ,"t-Dialog--noPadding"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Help":{
+    "Help Text":"\u003Cp\u003EThis page shows a report of the application users and the access level granted.\u003C\/p\u003E\n\u003Cp\u003EClick on the column headings to sort and filter data, or click on the \u003Cstrong\u003EActions\u003C\/strong\u003E button to customize column display and many additional advanced features.\u003Cbr\u003E\nClick the \u003Cstrong\u003EReset\u003C\/strong\u003E button to reset the interactive report back to the default settings.\u003C\/p\u003E\n\u003Cp\u003EClick the edit icon (yellow pencil) to edit the user details and access level, or to delete the user.\u003C\/p\u003E\n\u003Cp\u003EClick \u003Cstrong\u003EAdd User\u003C\/strong\u003E, at the top of the report, to add a new user and their access level.\u003C\/p\u003E"
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Access Control (103333568281216026776)"
+  }
+ ,"Regions":[
+    {
+      "id":"103334201711367030342"
+     ,"Identification":{
+        "Title":"Manage User Access"
+       ,"Type":"Interactive Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select id,\n   user_name_lc USERNAME,\n   role_names ACCESS_ROLE\nfrom APEX_APPL_ACL_USERS\nwhere APPLICATION_ID = :APP_ID"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (103333365133491026609)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-IRR-region--noBorders"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"103334202536069030343"
+       ,"Link":{
+          "Link Column":"Link to Custom Target"
+         ,"Target":{
+            "url":"f?p=\u0026APP_ID.:10042:\u0026APP_SESSION.::\u0026DEBUG.:RP:P10042_ID:\u005C#ID#\u005C"
+           ,"Page":"10042"
+           ,"Clear Cache":"RP"
+           ,"Values":{
+              "P10042_ID":"#ID#"
+            }
+          }
+         ,"Link Icon":"\u003Cspan role=\"img\" aria-label=\"Edit\" class=\"fa fa-edit\" title=\"Edit\"\u003E\u003C\/span\u003E"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+         ,"When More Data Found":"The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query."
+        }
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":true
+         ,"Reports Select List":true
+         ,"Rows Per Page Selector":false
+        }
+       ,"Actions Menu":{
+          "Include Actions Menu":true
+         ,"Filter":true
+         ,"Select Columns":true
+         ,"Rows Per Page":true
+         ,"Sort":true
+         ,"Control Break":true
+         ,"Highlight":true
+         ,"Compute":true
+         ,"Aggregate":true
+         ,"Chart":true
+         ,"Group By":true
+         ,"Pivot":true
+         ,"Flashback":true
+         ,"Save Report":true
+         ,"Save Public Report":false
+         ,"Reset":true
+         ,"Help":true
+         ,"Download":true
+         ,"Subscription":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"103334205225604030349"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"1033342053"
+            }
+          }
+        ]
+       ,"Columns":[
+          {
+            "id":"103334202935598030346"
+           ,"Identification":{
+              "Column Name":"ID"
+             ,"Type":"Hidden Column"
+            }
+           ,"Heading":{
+              "Heading":"ID"
+            }
+           ,"Layout":{
+              "Sequence":0
+            }
+           ,"Source":{
+              "Primary Key":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103334203320640030347"
+           ,"Identification":{
+              "Column Name":"USERNAME"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Username"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":2
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"103334203726805030347"
+           ,"Identification":{
+              "Column Name":"ACCESS_ROLE"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Roles"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":3
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+        ]
+       ,"Printing":{
+          "Output":{
+            "View File As":"Attachment"
+          }
+         ,"Page":{
+            "Size":"Letter"
+           ,"Orientation":"Landscape"
+           ,"Units":"Inches"
+           ,"Width":11
+           ,"Height":8.5
+           ,"Border Width":0.5
+           ,"Border Color":"#666666"
+          }
+         ,"Page Header":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+           ,"Page Header Text":"Manage User Access"
+          }
+         ,"Column Headings":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Bold"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#EEEEEE"
+          }
+         ,"Columns":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#FFFFFF"
+          }
+         ,"Page Footer":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+          }
+        }
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103334206107034030349"
+     ,"Identification":{
+        "Button Name":"RESET_REPORT"
+       ,"Label":"Reset"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Manage User Access (103334201711367030342)"
+       ,"Position":"RIGHT_OF_IR_SEARCH_BAR"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "t-Button--iconLeft"
+         ,"t-Button--gapRight"
+        ]
+       ,"Icon":"fa-undo-alt"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:\u0026APP_PAGE_ID.:\u0026APP_SESSION.::\u0026DEBUG.:\u0026APP_PAGE_ID.,RR::"
+         ,"Page":"\u0026APP_PAGE_ID."
+         ,"Clear Cache":"\u0026APP_PAGE_ID.,RR"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"103334206570788030350"
+     ,"Identification":{
+        "Button Name":"ADD_MULTIPLE_USERS"
+       ,"Label":"Add Multiple Users"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Manage User Access (103334201711367030342)"
+       ,"Position":"RIGHT_OF_IR_SEARCH_BAR"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10043:\u0026APP_SESSION.::\u0026DEBUG.:10043::"
+         ,"Page":"10043"
+         ,"Clear Cache":"10043"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"103334206975190030350"
+     ,"Identification":{
+        "Button Name":"ADD_USER"
+       ,"Label":"Add User"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Manage User Access (103334201711367030342)"
+       ,"Position":"RIGHT_OF_IR_SEARCH_BAR"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:10042:\u0026APP_SESSION.::\u0026DEBUG.:10042::"
+         ,"Page":"10042"
+         ,"Clear Cache":"10042"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103334201887284030342"
+     ,"Identification":{
+        "Name":"Refresh Report"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSEDIALOG"
+       ,"Selection Type":"Region"
+       ,"Region":"Manage User Access (103334201711367030342)"
+      }
+     ,"Actions":[
+        {
+          "id":"103334207588774030350"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Manage User Access (103334201711367030342)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Refresh Report (103334201887284030342)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

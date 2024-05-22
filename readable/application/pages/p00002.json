@@ -1,0 +1,120 @@
+{
+  "id":"2"
+ ,"Identification":{
+    "Name":"Add to Cart"
+   ,"Alias":"ADD-TO-CART"
+   ,"Title":"Add to Cart"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"110866801099809560834"
+     ,"Identification":{
+        "Title":"Books"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT b.TITLE, \n       jt1.description, \n       jt2.publisher\nFROM   books b,\n       JSON_TABLE (b.TITLE, \u0027$\u0027 \n           COLUMNS ( description VARCHAR2(4000) PATH \u0027$.description\u0027) ) jt1,\n       JSON_TABLE (b.DESCRIPTION, \u0027$\u0027 \n           COLUMNS ( publisher VARCHAR2(4000) PATH \u0027$.publisher\u0027) ) jt2\nWHERE  b.BOOK_ID = :p18_book_id;\n"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Cards Container (103333315345454026587)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-CardsRegion--styleC"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"110866801120080560835"
+       ,"Appearance":{
+          "Layout":"Float"
+        }
+       ,"Title":{
+          "Advanced Formatting":false
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+      }
+    }
+  ]
+}

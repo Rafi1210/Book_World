@@ -1,0 +1,515 @@
+{
+  "id":"10036"
+ ,"Identification":{
+    "Name":"Log Messages"
+   ,"Alias":"LOG-MESSAGES"
+   ,"Title":"Log Messages"
+   ,"Page Group":"Administration (103333572668987026780)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":false
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authorization Scheme":"Administration Rights (103333571022909026778)"
+   ,"Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Activity Reporting (103333568377923026776)"
+  }
+ ,"Regions":[
+    {
+      "id":"103333991446466030332"
+     ,"Identification":{
+        "Title":"Automation Execution"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (103333308205665026583)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103333993829121030334"
+     ,"Identification":{
+        "Title":"Messages"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select message_timestamp,\n       message,\n       message_type,\n       pk_value\n  from apex_automation_msg_log\n where automation_log_id = :P10036_LOG_ID"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (103333365133491026609)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-IRR-region--noBorders"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":50
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (103333413154485026632)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--stretch"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+           ,"t-Report--inline"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":50
+        }
+       ,"Messages":{
+          "When No Data Found":"no data found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"103333994220002030336"
+         ,"Identification":{
+            "Column Name":"MESSAGE_TIMESTAMP"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Timestamp"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":1
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"1"
+           ,"Direction":"Descending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103333994600856030336"
+         ,"Identification":{
+            "Column Name":"MESSAGE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Message"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103333995050235030336"
+         ,"Identification":{
+            "Column Name":"MESSAGE_TYPE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Message Type"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":3
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"103333995446172030337"
+         ,"Identification":{
+            "Column Name":"PK_VALUE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Primary Key Value"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":4
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103333991813301030332"
+     ,"Identification":{
+        "Name":"P10036_LOG_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Automation Execution (103333991446466030332)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103333992249860030332"
+     ,"Identification":{
+        "Name":"P10036_AUTOMATION_NAME"
+       ,"Type":"Display Only"
+      }
+     ,"Label":{
+        "Label":"Automation"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Format":"Plain Text"
+       ,"Based On":"Item Value"
+       ,"Show Line Breaks":true
+       ,"Send On Page Submit":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Automation Execution (103333991446466030332)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (103333445622185026649)"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103333992631184030333"
+     ,"Identification":{
+        "Name":"P10036_START_TIMESTAMP"
+       ,"Type":"Display Only"
+      }
+     ,"Label":{
+        "Label":"Started"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Format":"Plain Text"
+       ,"Based On":"Item Value"
+       ,"Show Line Breaks":true
+       ,"Send On Page Submit":true
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Automation Execution (103333991446466030332)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (103333445622185026649)"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103333993052806030333"
+     ,"Identification":{
+        "Name":"P10036_STATUS"
+       ,"Type":"Display Only"
+      }
+     ,"Label":{
+        "Label":"Status"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Format":"Plain Text"
+       ,"Based On":"Item Value"
+       ,"Show Line Breaks":true
+       ,"Send On Page Submit":true
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Automation Execution (103333991446466030332)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (103333445622185026649)"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"103333993483999030333"
+     ,"Identification":{
+        "Name":"Get Log Detail"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"select automation_name,\n       start_timestamp,\n       status\n  into :P10036_AUTOMATION_NAME,\n       :P10036_START_TIMESTAMP,\n       :P10036_STATUS\n  from apex_automation_log\n where id = :P10036_LOG_ID;"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "id":"20010"
+ ,"Identification":{
+    "Name":"Push Notifications"
+   ,"Alias":"PUSH-NOTIFICATIONS"
+   ,"Title":"Settings - Push Notifications"
+   ,"Page Group":"User Settings (103334315705262030972)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (103333272006910026562)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"JavaScript":{
+    "Execute when Page Loads":"apex.pwa.initPushSubscriptionPage();"
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Help":{
+    "Help Text":"This page contains the settings for controlling push notification subscription for the current user."
+  }
+ ,"Configuration":{
+    "Build Option":"Feature: Push Notifications (103334315941329030972)"
+  }
+ ,"Regions":[
+    {
+      "id":"103334317377019030973"
+     ,"Identification":{
+        "Title":"Push Notifications Not Supported"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"Push notifications are not currently supported in your browser."
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Alert (103333303055115026580)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Alert--colorBG"
+         ,"t-Alert--wizard"
+         ,"t-Alert--customIcons"
+         ,"t-Alert--warning"
+         ,"t-Alert--removeHeading js-removeLandmark"
+         ,"t-Form--xlarge"
+        ]
+       ,"CSS Classes":[
+          "a-pwaPush--subscriptionRegion--not-supported"
+        ]
+       ,"Icon":"fa-bell-slash-o"
+       ,"Render Components":"Below Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Custom Attributes":[
+          "style=\"display:none;\""
+        ]
+       ,"Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"103334317677483030973"
+     ,"Identification":{
+        "Title":"Push Notifications"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"Push notifications have to be enabled for each device you want to receive the notifications on. The first time you enable push notifications, you will have to grant permission to your browser. This setting can be changed at any time."
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Alert (103333303055115026580)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Alert--colorBG"
+         ,"t-Alert--wizard"
+         ,"t-Alert--customIcons"
+         ,"t-Alert--info"
+         ,"t-Alert--removeHeading js-removeLandmark"
+         ,"t-Form--xlarge"
+        ]
+       ,"CSS Classes":[
+          "a-pwaPush--subscriptionRegion"
+        ]
+       ,"Icon":"fa-bell-o"
+       ,"Render Components":"Below Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103334318133795030974"
+     ,"Identification":{
+        "Name":"P20010_ENABLE_PUSH"
+       ,"Type":"Checkbox"
+      }
+     ,"Label":{
+        "Label":"Enable push notifications on this device"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Push Notifications (103334317677483030973)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (103333445622185026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"margin-top-sm"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103334316947312030973"
+     ,"Identification":{
+        "Button Name":"BACK"
+       ,"Label":"Settings"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Alignment":"Right"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (103333448223250026651)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--link"
+         ,"t-Button--iconLeft"
+        ]
+       ,"CSS Classes":[
+          "t-Button--inlineLink"
+        ]
+       ,"Icon":"fa-chevron-left"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:20000:\u0026APP_SESSION.::\u0026DEBUG.:::"
+         ,"Page":"20000"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"103334318401063030974"
+     ,"Identification":{
+        "Name":"Change P20010_ENABLE_PUSH"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P20010_ENABLE_PUSH"
+        ]
+      }
+     ,"Client-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P20010_ENABLE_PUSH"
+       ,"Value":"Y"
+      }
+     ,"Actions":[
+        {
+          "id":"103334318973388030974"
+         ,"Identification":{
+            "Name":"Subscribe to push notifications"
+           ,"Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"apex.pwa.subscribePushNotifications();"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Change P20010_ENABLE_PUSH (103334318401063030974)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"103334319460552030975"
+         ,"Identification":{
+            "Name":"Unsubscribe from push notifications"
+           ,"Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"apex.pwa.unsubscribePushNotifications();"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Change P20010_ENABLE_PUSH (103334318401063030974)"
+           ,"Fire When Event Result Is":"False"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

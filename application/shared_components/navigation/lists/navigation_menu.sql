@@ -1,0 +1,134 @@
+prompt --application/shared_components/navigation/lists/navigation_menu
+begin
+--   Manifest
+--     LIST: Navigation Menu
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.10.31'
+,p_release=>'23.2.4'
+,p_default_workspace_id=>101552441239654991975
+,p_default_application_id=>215031
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_ONLINEBOOKSTORE'
+);
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(103333271785676026562)
+,p_name=>'Navigation Menu'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(103333579310284026788)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>'Home'
+,p_list_item_link_target=>'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-home'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(109931080207733485254)
+,p_list_item_display_sequence=>15
+,p_list_item_link_text=>'Dashboard'
+,p_list_item_link_target=>'f?p=&APP_ID.:22:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-dashboard'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'22'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(110871826472808923297)
+,p_list_item_display_sequence=>20
+,p_list_item_link_text=>'Books'
+,p_list_item_link_target=>'f?p=&APP_ID.:24:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-table-search'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'24'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(103333638686597027596)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'Categories'
+,p_list_item_link_target=>'f?p=&APP_ID.:8:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(103333674936496028323)
+,p_list_item_display_sequence=>70
+,p_list_item_link_text=>'Authors'
+,p_list_item_link_target=>'f?p=&APP_ID.:12:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(103333703363918028708)
+,p_list_item_display_sequence=>80
+,p_list_item_link_text=>'Wishlist'
+,p_list_item_link_target=>'f?p=&APP_ID.:14:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111429420080939268501)
+,p_list_item_display_sequence=>210
+,p_list_item_link_text=>'Reviews'
+,p_list_item_link_target=>'f?p=&APP_ID.:23:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'23'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111560164787418952506)
+,p_list_item_display_sequence=>220
+,p_list_item_link_text=>'Cart'
+,p_list_item_link_target=>'f?p=&APP_ID.:18:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'18'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111752740480320488673)
+,p_list_item_display_sequence=>230
+,p_list_item_link_text=>'Authors Info'
+,p_list_item_link_target=>'f?p=&APP_ID.:26:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table-search'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'26'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111863068626325244138)
+,p_list_item_display_sequence=>240
+,p_list_item_link_text=>'Revenue'
+,p_list_item_link_target=>'f?p=&APP_ID.:28:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-area-chart'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'28'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111998829896892298911)
+,p_list_item_display_sequence=>250
+,p_list_item_link_text=>'New Arrival'
+,p_list_item_link_target=>'f?p=&APP_ID.:4:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'4'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(112016953555366501954)
+,p_list_item_display_sequence=>260
+,p_list_item_link_text=>'Highest Rated Books'
+,p_list_item_link_target=>'f?p=&APP_ID.:42:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-area-chart'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'42'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(103334287544154030591)
+,p_list_item_display_sequence=>10000
+,p_list_item_link_text=>'Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:10000:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-user-wrench'
+,p_security_scheme=>wwv_flow_imp.id(103333571022909026778)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp.component_end;
+end;
+/

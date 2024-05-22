@@ -1,0 +1,528 @@
+{
+  "id":"9999"
+ ,"Identification":{
+    "Name":"Login Page"
+   ,"Alias":"LOGIN"
+   ,"Title":"BookWorld - Log In"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Login (103333282857441026569)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"First item on page"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+   ,"Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"103333573256487026783"
+     ,"Identification":{
+        "Title":"BookWorld"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Login (103333369793910026611)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Image":{
+        "File URL":"#APP_FILES#icons\/app-icon-512.png"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"103333573785887026784"
+     ,"Identification":{
+        "Name":"P9999_USERNAME"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Username"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"BookWorld (103333573256487026783)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (103333445341821026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-user"
+       ,"Width":40
+       ,"Value Placeholder":"Username"
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":100
+      }
+     ,"Advanced":{
+        "Custom Attributes":[
+          "autocomplete=\"username\""
+        ]
+       ,"Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Database Column"
+       ,"Database Column":"USER_ID"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103333574132252026784"
+     ,"Identification":{
+        "Name":"P9999_PASSWORD"
+       ,"Type":"Password"
+      }
+     ,"Label":{
+        "Label":"Password"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Submit when Enter pressed":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"BookWorld (103333573256487026783)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (103333445341821026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-key"
+       ,"Width":40
+       ,"Value Placeholder":"Password"
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":100
+      }
+     ,"Advanced":{
+        "Custom Attributes":[
+          "autocomplete=\"current-password\""
+        ]
+       ,"Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Database Column"
+       ,"Database Column":"PASSWORD_HASH"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"103333574573219026785"
+     ,"Identification":{
+        "Name":"P9999_REMEMBER"
+       ,"Type":"Checkbox"
+      }
+     ,"Label":{
+        "Label":"Remember username"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"BookWorld (103333573256487026783)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (103333445341821026649)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":"apex_authentication.persistent_cookies_enabled"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"103333574975823026785"
+     ,"Identification":{
+        "Button Name":"LOGIN"
+       ,"Label":"Sign In"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"BookWorld (103333573256487026783)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"104172861964222795222"
+     ,"Identification":{
+        "Button Name":"Registration"
+       ,"Label":"Registration"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"BookWorld (103333573256487026783)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (103333448170853026651)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:20:\u0026SESSION.::\u0026DEBUG.:20::"
+         ,"Page":"20"
+         ,"Clear Cache":"20"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL INSERT action"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"103333575236383026785"
+     ,"Identification":{
+        "Name":"Login"
+       ,"Type":"Invoke API"
+       ,"Execution Chain":"None"
+      }
+     ,"Settings":{
+        "Type":"PL\/SQL Package"
+       ,"Owner":"PARSING SCHEMA"
+       ,"Package":"APEX_AUTHENTICATION"
+       ,"Procedure or Function":"LOGIN"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Parameters":[
+        {
+          "id":"103333576239632026786"
+         ,"Identification":{
+            "Name":"p_password"
+          }
+         ,"Parameter":{
+            "Direction":"In"
+           ,"Data Type":"VARCHAR2"
+           ,"Has Default":false
+          }
+         ,"Value":{
+            "Type":"Item"
+           ,"Item":"P9999_PASSWORD"
+          }
+         ,"Advanced":{
+            "Display Sequence":2
+          }
+        }
+       ,{
+          "id":"111739951904242236416"
+         ,"Identification":{
+            "Name":"p_username"
+          }
+         ,"Parameter":{
+            "Direction":"In"
+           ,"Data Type":"VARCHAR2"
+           ,"Has Default":false
+          }
+         ,"Value":{
+            "Type":"Item"
+           ,"Item":"P9999_USERNAME"
+          }
+         ,"Advanced":{
+            "Display Sequence":12
+          }
+        }
+       ,{
+          "id":"111739952040738236417"
+         ,"Identification":{
+            "Name":"p_uppercase_username"
+          }
+         ,"Parameter":{
+            "Direction":"In"
+           ,"Data Type":"BOOLEAN"
+           ,"Has Default":true
+          }
+         ,"Value":{
+            "Type":"API Default"
+          }
+         ,"Advanced":{
+            "Display Sequence":22
+          }
+        }
+       ,{
+          "id":"111739952112299236418"
+         ,"Identification":{
+            "Name":"p_set_persistent_auth"
+          }
+         ,"Parameter":{
+            "Direction":"In"
+           ,"Data Type":"BOOLEAN"
+           ,"Has Default":true
+          }
+         ,"Value":{
+            "Type":"API Default"
+          }
+         ,"Advanced":{
+            "Display Sequence":32
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"103333577183296026786"
+     ,"Identification":{
+        "Name":"Set Username Cookie"
+       ,"Type":"Invoke API"
+       ,"Execution Chain":"None"
+      }
+     ,"Settings":{
+        "Type":"PL\/SQL Package"
+       ,"Owner":"PARSING SCHEMA"
+       ,"Package":"APEX_AUTHENTICATION"
+       ,"Procedure or Function":"SEND_LOGIN_USERNAME_COOKIE"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Parameters":[
+        {
+          "id":"103333577600215026787"
+         ,"Identification":{
+            "Name":"p_username"
+          }
+         ,"Parameter":{
+            "Direction":"In"
+           ,"Data Type":"VARCHAR2"
+           ,"Has Default":false
+          }
+         ,"Value":{
+            "Type":"Expression"
+           ,"Language":"PL\/SQL"
+           ,"PL\/SQL Expression":"lower( :P9999_USERNAME )"
+          }
+         ,"Advanced":{
+            "Display Sequence":1
+          }
+        }
+       ,{
+          "id":"103333578114094026787"
+         ,"Identification":{
+            "Name":"p_consent"
+          }
+         ,"Parameter":{
+            "Direction":"In"
+           ,"Data Type":"BOOLEAN"
+           ,"Has Default":false
+          }
+         ,"Value":{
+            "Type":"Item"
+           ,"Item":"P9999_REMEMBER"
+          }
+         ,"Advanced":{
+            "Display Sequence":2
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"103333578622397026787"
+     ,"Identification":{
+        "Name":"Get Username Cookie"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":":P9999_USERNAME := apex_authentication.get_login_username_cookie;\n:P9999_REMEMBER := case when :P9999_USERNAME is not null then \u0027Y\u0027 end;"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"103333579061495026787"
+     ,"Identification":{
+        "Name":"Clear Page(s) Cache"
+       ,"Type":"Clear Session State"
+       ,"Execution Chain":"None"
+      }
+     ,"Settings":{
+        "Type":"Clear all Items on the Current Page"
+      }
+     ,"Execution":{
+        "Sequence":30
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+  ]
+}

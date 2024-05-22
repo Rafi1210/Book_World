@@ -1,0 +1,350 @@
+[
+  {
+    "id":"103333583400219026879"
+   ,"Identification":{
+      "Name":"AUTHORS.AUTHOR_NAME"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"AUTHORS"
+    }
+   ,"Column Mapping":{
+      "Return":"AUTHOR_ID"
+     ,"Display":"AUTHOR_NAME"
+     ,"Default Sort":"AUTHOR_NAME"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"103333584532949026880"
+   ,"Identification":{
+      "Name":"CATEGORIES.GENRE"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"CATEGORIES"
+    }
+   ,"Column Mapping":{
+      "Return":"GENRE"
+     ,"Display":"GENRE"
+     ,"Default Sort":"Use Order By from Query"
+    }
+  }
+ ,{
+    "id":"103333604336107027235"
+   ,"Identification":{
+      "Name":"BOOKS.TITLE"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"BOOKS"
+    }
+   ,"Column Mapping":{
+      "Return":"TITLE"
+     ,"Display":"TITLE"
+     ,"Default Sort":"TITLE"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"103333605027863027235"
+   ,"Identification":{
+      "Name":"USER_ACCOUNT.USER_NAME"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"USER_ACCOUNT"
+    }
+   ,"Column Mapping":{
+      "Return":"USER_ID"
+     ,"Display":"USER_NAME"
+     ,"Default Sort":"USER_NAME"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"103333625462435027585"
+   ,"Identification":{
+      "Name":"ORDERS.ORDER_ID"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"ORDERS"
+    }
+   ,"Column Mapping":{
+      "Return":"ORDER_ID"
+     ,"Default Sort":"ORDER_ID"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"103333894240212029882"
+   ,"Identification":{
+      "Name":"DESKTOP THEME STYLES"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"SQL Query"
+     ,"SQL Query":"select s.name d,\n       s.theme_style_id r\n  from apex_application_theme_styles s,\n       apex_application_themes t\n where s.application_id = :app_id\n   and t.application_id = s.application_id\n   and t.theme_number   = s.theme_number\n   and t.is_current     = \u0027Yes\u0027\n order by 1"
+    }
+   ,"Column Mapping":{
+      "Return":"R"
+     ,"Display":"D"
+     ,"Default Sort":"Use Order By from Query"
+    }
+  }
+ ,{
+    "id":"103333894996537029885"
+   ,"Identification":{
+      "Name":"USER_THEME_PREFERENCE"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"103333895213567029885"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"Allow End Users to choose Theme Style"
+         ,"Return":"Yes"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"103333932812091030255"
+   ,"Identification":{
+      "Name":"TIMEFRAME (4 WEEKS)"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"SQL Query"
+     ,"SQL Query":"select disp,\n       val as seconds\n  from table( apex_util.get_timeframe_lov_data )\n order by insert_order"
+    }
+   ,"Column Mapping":{
+      "Return":"SECONDS"
+     ,"Display":"DISP"
+     ,"Default Sort":"Use Order By from Query"
+    }
+  }
+ ,{
+    "id":"103333980028184030317"
+   ,"Identification":{
+      "Name":"VIEW_AS_REPORT_CHART"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"103333980379706030317"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"Add Report Page"
+         ,"Return":"REPORT"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan class=\"fa fa-table\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003Cspan class=\"u-VisuallyHidden\"\u003E#DISPLAY_VALUE#\u003C\/span\u003E"
+        }
+      }
+     ,{
+        "id":"103333980793139030318"
+       ,"Entry":{
+          "Sequence":2
+         ,"Display":"Add Chart Page"
+         ,"Return":"CHART"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan class=\"fa fa-pie-chart\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003Cspan class=\"u-VisuallyHidden\"\u003E#DISPLAY_VALUE#\u003C\/span\u003E"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"103334213045048030355"
+   ,"Identification":{
+      "Name":"ACCESS_ROLES"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"SQL Query"
+     ,"SQL Query":"select role_name d, role_id r\nfrom APEX_APPL_ACL_ROLES where application_id = :APP_ID \norder by 1"
+    }
+   ,"Column Mapping":{
+      "Return":"R"
+     ,"Display":"D"
+     ,"Default Sort":"Use Order By from Query"
+    }
+  }
+ ,{
+    "id":"103334220851136030367"
+   ,"Identification":{
+      "Name":"EMAIL_USERNAME_FORMAT"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"103334221188282030367"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"Email Addresses"
+         ,"Return":"EMAIL"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"103334250233673030556"
+   ,"Identification":{
+      "Name":"FEEDBACK_RATING"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"103334250503024030556"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"Positive"
+         ,"Return":"3"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan title=\"#DISPLAY_VALUE#\" aria-label=\"#DISPLAY_VALUE#\"\u003E\u003Cspan class=\"fa fa-smile-o fa-2x feedback-positive\" aria-hidden=\"true\" \u003E\u003C\/span\u003E\u003C\/span\u003E"
+        }
+      }
+     ,{
+        "id":"103334250956825030557"
+       ,"Entry":{
+          "Sequence":2
+         ,"Display":"Neutral"
+         ,"Return":"2"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan title=\"#DISPLAY_VALUE#\" aria-label=\"#DISPLAY_VALUE#\"\u003E\u003Cspan class=\"fa fa-emoji-neutral fa-2x feedback-neutral\" aria-hidden=\"true\" \u003E\u003C\/span\u003E\u003C\/span\u003E"
+        }
+      }
+     ,{
+        "id":"103334251396854030557"
+       ,"Entry":{
+          "Sequence":3
+         ,"Display":"Negative"
+         ,"Return":"1"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan title=\"#DISPLAY_VALUE#\" aria-label=\"#DISPLAY_VALUE#\"\u003E\u003Cspan class=\"fa fa-frown-o fa-2x feedback-negative\" aria-hidden=\"true\" \u003E\u003C\/span\u003E\u003C\/span\u003E"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"103334262619998030565"
+   ,"Identification":{
+      "Name":"FEEDBACK_STATUS"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"103334262991179030565"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"No Action"
+         ,"Return":"0"
+        }
+      }
+     ,{
+        "id":"103334263393808030565"
+       ,"Entry":{
+          "Sequence":2
+         ,"Display":"Acknowledged"
+         ,"Return":"1"
+        }
+      }
+     ,{
+        "id":"103334263853026030566"
+       ,"Entry":{
+          "Sequence":3
+         ,"Display":"Open"
+         ,"Return":"3"
+        }
+      }
+     ,{
+        "id":"103334264216042030566"
+       ,"Entry":{
+          "Sequence":4
+         ,"Display":"Closed"
+         ,"Return":"4"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"111398332226823712251"
+   ,"Identification":{
+      "Name":"USER_ACCOUNT.USER_ID"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"USER_ACCOUNT"
+    }
+   ,"Column Mapping":{
+      "Return":"USER_ID"
+     ,"Display":"USER_ID"
+     ,"Default Sort":"USER_ID"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"112080031736763708192"
+   ,"Identification":{
+      "Name":"BOOKS.BOOK_ID"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"BOOKS"
+    }
+   ,"Column Mapping":{
+      "Return":"BOOK_ID"
+     ,"Display":"BOOK_ID"
+     ,"Default Sort":"BOOK_ID"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"112082039527657501722"
+   ,"Identification":{
+      "Name":"PRODUCTS.PRODUCT_NAME"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"PRODUCTS"
+    }
+   ,"Column Mapping":{
+      "Return":"PRODUCT_ID"
+     ,"Display":"PRODUCT_NAME"
+     ,"Default Sort":"PRODUCT_NAME"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+]
